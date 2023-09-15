@@ -17,7 +17,7 @@ Winform (Admin)
 Web (User)
   - Đăng ký, Đăng nhập.
   - Chọn lộ trình.
-  - Đặt vé xe.
+  - Đặt vé xe, Hủy vé xe.
   - Quản lý vé.
   - Xem thông tin vé.
   - Đánh giá.
