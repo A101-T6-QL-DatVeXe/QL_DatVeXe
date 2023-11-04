@@ -3483,11 +3483,7 @@
 			quidu      	"39CD6AE1011A")
 		    (object ClassAttribute "NGAYDANG"
 			quid       	"574DDC7D03B9"
-			type       	"Date")
-		    (object ClassAttribute "HINHANH"
-			quid       	"574DE09A034B"
-			type       	"String"
-			quidu      	"39CD6AE1011A")))
+			type       	"Date")))
 	    (object Class "TAIKHOAN"
 		quid       	"574DD69D01D4"
 		operations 	(list Operations
@@ -3571,14 +3567,12 @@
 			quid       	"574DD978003E"
 			type       	"String"
 			quidu      	"39CD6AE1011A")
-		    (object ClassAttribute "SOSAO"
-			quid       	"574DE07A00CB")
-		    (object ClassAttribute "MOTA"
-			quid       	"574DD9B700FA"
-			type       	"String"
-			quidu      	"39CD6AE1011A")
 		    (object ClassAttribute "HINHANH"
 			quid       	"574DD9A80232"
+			type       	"String"
+			quidu      	"39CD6AE1011A")
+		    (object ClassAttribute "MOTA"
+			quid       	"574DD9B700FA"
 			type       	"String"
 			quidu      	"39CD6AE1011A")))
 	    (object Class "DANHGIA"
@@ -4021,7 +4015,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@178
-			    location   	(355, 1094)
+			    location   	(355, 1119)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	378
@@ -4033,7 +4027,7 @@
 			quidu      	"574DD6980148"
 			compartment 	(object Compartment
 			    Parent_View 	@178
-			    location   	(355, 1154)
+			    location   	(355, 1182)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -4046,11 +4040,11 @@
 			    icon_style 	"Icon"
 			    fill_color 	13434879
 			    anchor     	2
-			    nlines     	9
-			    max_width  	375
+			    nlines     	8
+			    max_width  	400
 			    justify    	1)
 			width      	396
-			height     	524
+			height     	476
 			annotation 	8
 			autoResize 	TRUE)
 		    (object ClassView "Class" "Logical View::CHITIETHOADON" @179
@@ -4993,7 +4987,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@217
-			    location   	(3021, 1691)
+			    location   	(3021, 1717)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	454
@@ -5005,7 +4999,7 @@
 			quidu      	"574DD6EC0196"
 			compartment 	(object Compartment
 			    Parent_View 	@217
-			    location   	(3021, 1751)
+			    location   	(3021, 1780)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -5018,22 +5012,22 @@
 			    icon_style 	"Icon"
 			    fill_color 	13434879
 			    anchor     	2
-			    nlines     	14
-			    max_width  	451
+			    nlines     	13
+			    max_width  	480
 			    justify    	1)
 			width      	472
-			height     	770
+			height     	720
 			annotation 	8
 			autoResize 	TRUE)
 		    (object AssociationViewNew "$UNNAMED$93" @218
-			location   	(3248, 1433)
+			location   	(3248, 1445)
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"574DDEA30000"
 			roleview_list 	(list RoleViews
 			    (object RoleView "$UNNAMED$94" @219
 				Parent_View 	@218
-				location   	(480, 553)
+				location   	(480, 565)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -5049,12 +5043,12 @@
 				client     	@218
 				supplier   	@217
 				vertices   	(list Points
-				    (3248, 1433)
-				    (3248, 1678))
+				    (3248, 1445)
+				    (3248, 1703))
 				line_style 	0
 				label      	(object SegLabel @220
 				    Parent_View 	@219
-				    location   	(3302, 1652)
+				    location   	(3302, 1677)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
@@ -5075,7 +5069,7 @@
 				    orientation 	0))
 			    (object RoleView "$UNNAMED$95" @221
 				Parent_View 	@218
-				location   	(480, 553)
+				location   	(480, 565)
 				font       	(object Font
 				    size       	10
 				    face       	"Arial"
@@ -5091,12 +5085,12 @@
 				client     	@218
 				supplier   	@180
 				vertices   	(list Points
-				    (3248, 1433)
+				    (3248, 1445)
 				    (3248, 1188))
 				line_style 	0
 				label      	(object SegLabel @222
 				    Parent_View 	@221
-				    location   	(3302, 1214)
+				    location   	(3302, 1215)
 				    font       	(object Font
 					size       	10
 					face       	"Arial"
