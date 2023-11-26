@@ -2021,7 +2021,7 @@ namespace QL_DatVeXe.Models
 		
 		private System.Nullable<int> _GIAVE;
 		
-		private string _DONVITINH;
+		private int _CONTRONG;
 		
 		private string _DIEMDON;
 		
@@ -2030,6 +2030,8 @@ namespace QL_DatVeXe.Models
 		private string _THOIGIANDON;
 		
 		private System.Nullable<int> _SOSAO;
+		
+		private System.Nullable<int> _LUOTDANHGIA;
 		
 		private string _MOTA;
 		
@@ -2051,8 +2053,8 @@ namespace QL_DatVeXe.Models
     partial void OnTENVEChanged();
     partial void OnGIAVEChanging(System.Nullable<int> value);
     partial void OnGIAVEChanged();
-    partial void OnDONVITINHChanging(string value);
-    partial void OnDONVITINHChanged();
+    partial void OnCONTRONGChanging(int value);
+    partial void OnCONTRONGChanged();
     partial void OnDIEMDONChanging(string value);
     partial void OnDIEMDONChanged();
     partial void OnDIEMDENChanging(string value);
@@ -2061,6 +2063,8 @@ namespace QL_DatVeXe.Models
     partial void OnTHOIGIANDONChanged();
     partial void OnSOSAOChanging(System.Nullable<int> value);
     partial void OnSOSAOChanged();
+    partial void OnLUOTDANHGIAChanging(System.Nullable<int> value);
+    partial void OnLUOTDANHGIAChanged();
     partial void OnMOTAChanging(string value);
     partial void OnMOTAChanged();
     partial void OnHINHANHChanging(string value);
@@ -2135,22 +2139,22 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DONVITINH", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string DONVITINH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CONTRONG", DbType="Int NOT NULL")]
+		public int CONTRONG
 		{
 			get
 			{
-				return this._DONVITINH;
+				return this._CONTRONG;
 			}
 			set
 			{
-				if ((this._DONVITINH != value))
+				if ((this._CONTRONG != value))
 				{
-					this.OnDONVITINHChanging(value);
+					this.OnCONTRONGChanging(value);
 					this.SendPropertyChanging();
-					this._DONVITINH = value;
-					this.SendPropertyChanged("DONVITINH");
-					this.OnDONVITINHChanged();
+					this._CONTRONG = value;
+					this.SendPropertyChanged("CONTRONG");
+					this.OnCONTRONGChanged();
 				}
 			}
 		}
@@ -2231,6 +2235,26 @@ namespace QL_DatVeXe.Models
 					this._SOSAO = value;
 					this.SendPropertyChanged("SOSAO");
 					this.OnSOSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LUOTDANHGIA", DbType="Int")]
+		public System.Nullable<int> LUOTDANHGIA
+		{
+			get
+			{
+				return this._LUOTDANHGIA;
+			}
+			set
+			{
+				if ((this._LUOTDANHGIA != value))
+				{
+					this.OnLUOTDANHGIAChanging(value);
+					this.SendPropertyChanging();
+					this._LUOTDANHGIA = value;
+					this.SendPropertyChanged("LUOTDANHGIA");
+					this.OnLUOTDANHGIAChanged();
 				}
 			}
 		}

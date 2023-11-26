@@ -45,11 +45,12 @@ CREATE TABLE VEXE (
     MAVE INT IDENTITY(1,1) PRIMARY KEY,
 	TENVE NVARCHAR(50) NOT NULL,
 	GIAVE INT,
-	DONVITINH NVARCHAR(50) NOT NULL,
+	CONTRONG INT NOT NULL,
 	DIEMDON NVARCHAR(50) NOT NULL,
 	DIEMDEN NVARCHAR(50) NOT NULL,
 	THOIGIANDON NVARCHAR(50) NOT NULL,
     SOSAO INT,
+	LUOTDANHGIA INT,
 	MOTA NVARCHAR(MAX) NOT NULL,
 	HINHANH VARCHAR(50),
 );
@@ -120,3 +121,26 @@ CREATE TABLE TINTUC (
     NGAYDANG DATETIME,
     HINHANH VARCHAR(50)
 );
+
+GO
+INSERT INTO VEXE
+VALUES (N'Luxury Van Limousine',320000,13,N'Ninh Bình',N'Quảng Ninh',N'07 giờ 30 phút',4,50,N'Limousine 10 chỗ','offer_1.jpg'),
+	   (N'Premium Van',250000, 11, N'Hà Nội', N'Hải Phòng', N'08 giờ', 5,30,N'Premium Van phòng đôi 22 chỗ mới (Có Toilet)','offer_2.jpg'),
+	   (N'Deluxe Bus',450000,30, N'Hồ Chí Minh', N'Nha Trang', N'09 giờ', 2,60,N'Giường nằm 40 chỗ có toilet', 'offer_3.jpg'),
+	   (N'Luxury Van Limousine',300000,22, N'Đà Nẵng', N'Hội An', N'07 giờ 30 phút', 1,22,N'Giường nằm 42 chỗ', 'offer_4.jpg'),
+	   (N'Premium Van',280000,23, N'Quảng Ninh', N'Ninh Bình', N'08 giờ', 5,84,N'Giường nằm 40 chỗ có toilet', 'offer_5.jpg'),
+	   (N'Deluxe Bus',500000,31, N'Hà Nội', N'Hồ Chí Minh', N'09 giờ 30 phút', 2,33,N'Giường nằm 40 chỗ có toilet', 'offer_6.jpg'),
+	   (N'Luxury Van Limousine',350000,10, N'Hải Phòng', N'Hạ Long', N'08 giờ',4,34, N'Limousine 21 phòng (WC)', 'offer_7.jpg'),
+	   (N'Premium Van',320000, 5, N'Đà Lạt', N'Đà Nẵng', N'09 giờ 30 phút',3,67, N'Xe chất lượng cao','offer_8.jpg'),
+	   (N'Deluxe Bus',550000, 6, N'Nha Trang', N'Vũng Tàu', N'10 giờ', 5,53,N'Giường nằm 38 chỗ (WC)','offer_1.jpg'),
+	   (N'Luxury Van Limousine',300000,14, N'Ninh Bình', N'Hà Nội', N'07 giờ',4,112, N'Giường nằm 38 chỗ (WC)', 'offer_2.jpg'),
+	   (N'Premium Van',280000,23, N'Hồ Chí Minh', N'Quảng Ninh', N'08 giờ 30 phút',3,14, N'Giường nằm 20 chỗ có toilet', 'offer_3.jpg'),
+	   (N'Deluxe Bus',480000,32, N'Hội An', N'Đà Nẵng', N'09 giờ 30 phút', 2,44,N'Giường nằm 40 chỗ có toilet', 'offer_4.jpg'),
+   	   (N'Luxury Van Limousine',350000,11, N'Quảng Ninh', N'Hà Nội', N'07 giờ', 1,43,N'Giường nằm 40 chỗ có toilet', 'offer_5.jpg'),
+	   (N'Premium Van',300000,36, N'Hải Phòng', N'Hồ Chí Minh', N'08 giờ', 3,34,N'Giường nằm 40 chỗ có toilet', 'offer_6.jpg'),
+	   (N'Deluxe Bus',500000,16, N'Đà Nẵng', N'Nha Trang', N'09 giờ', 5,32,N'Giường nằm 40 chỗ có toilet', 'offer_7.jpg'),
+	   (N'Luxury Van Limousine',320000,18, N'Ninh Bình', N'Hội An', N'07 giờ 30 phút', 3,79,N'Giường nằm 40 chỗ có toilet', 'offer_8.jpg'),
+	   (N'Premium Van',280000,30, N'Quảng Ninh', N'Ninh Bình', N'08 giờ',4,82, N'Giường nằm 40 chỗ có toilet', 'offer_1.jpg'),
+	   (N'Deluxe Bus',450000,30, N'Hà Nội', N'Hồ Chí Minh', N'09 giờ 30 phút', 5,66,N'Giường nằm 40 chỗ có toilet', 'offer_2.jpg'),
+	   (N'Luxury Van Limousine',320000,30, N'Hải Phòng', N'Hạ Long', N'08 giờ', 1,48,N'Giường nằm 40 chỗ có toilet', 'offer_3.jpg'),
+	   (N'Premium Van',300000,33, N'Đà Lạt', N'Đà Nẵng', N'09 giờ 30 phút', 2,47,N'Giường nằm 40 chỗ có toilet', 'offer_4.jpg');
