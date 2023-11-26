@@ -164,7 +164,15 @@ $(document).ready(function()
 	            		var starsEle = $(itemElement).find('.offers_rating');
 	            		var stars = starsEle.attr("data-rating");
 	            		return stars;
-	            	}
+                    },
+                    ghe: function (itemElement) {
+                        var gheEle = $(itemElement).find('.offer_ghe_subtitle').data('ghe');
+                        return parseInt(gheEle);
+                    },
+                    review: function (itemElement) {
+                        var reviewEle = $(itemElement).find('.offer_reviews_subtitle').data('review');
+                        return parseInt(reviewEle);
+                    }
 	            },
 	            animationOptions: {
 	                duration: 750,

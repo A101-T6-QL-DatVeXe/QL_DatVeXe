@@ -94,11 +94,12 @@
       <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TENVE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="GIAVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DONVITINH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CONTRONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DIEMDON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DIEMDEN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="THOIGIANDON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SOSAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LUOTDANHGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="HINHANH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="VEXE_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MAVE" OtherKey="MAVE" Type="CHITIETHOADON" />
