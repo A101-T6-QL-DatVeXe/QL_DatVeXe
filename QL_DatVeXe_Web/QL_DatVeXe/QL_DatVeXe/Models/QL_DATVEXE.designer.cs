@@ -1298,7 +1298,7 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="NVarChar(1)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANGTHAI", DbType="NVarChar(50)")]
 		public string TRANGTHAI
 		{
 			get
@@ -2027,6 +2027,10 @@ namespace QL_DatVeXe.Models
 		
 		private string _DIEMDEN;
 		
+		private System.DateTime _NGAYDI;
+		
+		private System.DateTime _NGAYVE;
+		
 		private string _THOIGIANDON;
 		
 		private System.Nullable<int> _SOSAO;
@@ -2059,6 +2063,10 @@ namespace QL_DatVeXe.Models
     partial void OnDIEMDONChanged();
     partial void OnDIEMDENChanging(string value);
     partial void OnDIEMDENChanged();
+    partial void OnNGAYDIChanging(System.DateTime value);
+    partial void OnNGAYDIChanged();
+    partial void OnNGAYVEChanging(System.DateTime value);
+    partial void OnNGAYVEChanged();
     partial void OnTHOIGIANDONChanging(string value);
     partial void OnTHOIGIANDONChanged();
     partial void OnSOSAOChanging(System.Nullable<int> value);
@@ -2195,6 +2203,46 @@ namespace QL_DatVeXe.Models
 					this._DIEMDEN = value;
 					this.SendPropertyChanged("DIEMDEN");
 					this.OnDIEMDENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDI", DbType="Date NOT NULL")]
+		public System.DateTime NGAYDI
+		{
+			get
+			{
+				return this._NGAYDI;
+			}
+			set
+			{
+				if ((this._NGAYDI != value))
+				{
+					this.OnNGAYDIChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDI = value;
+					this.SendPropertyChanged("NGAYDI");
+					this.OnNGAYDIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYVE", DbType="Date NOT NULL")]
+		public System.DateTime NGAYVE
+		{
+			get
+			{
+				return this._NGAYVE;
+			}
+			set
+			{
+				if ((this._NGAYVE != value))
+				{
+					this.OnNGAYVEChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYVE = value;
+					this.SendPropertyChanged("NGAYVE");
+					this.OnNGAYVEChanged();
 				}
 			}
 		}
