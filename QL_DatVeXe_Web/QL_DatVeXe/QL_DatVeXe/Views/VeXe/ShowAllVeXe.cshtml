@@ -4,27 +4,31 @@
     ViewBag.Title = "ShowAllVeXe";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    var diem = 0;
-}
 <div class="container">
     <div class="row">
         <div class="col-lg-1 temp_col"></div>
-        <div class="col-lg-11">
+        <div class="spro col-lg-11">
 
             <!-- Offers Sorting -->
             <div class="offers_sorting_container">
+                <ul class="title-offers">
+                    <li>Sắp xếp theo giá</li>
+                    <li>Sắp xếp theo tên</li>
+                    <li class="title-offers-2">đánh giá</li>
+                    <li class="title-offers-2">Số ghế trống</li>
+                    <li class="title-offers-2">Lượt reviews</li>
+                </ul>
                 <ul class="offers_sorting">
                     <li>
-                        <span class="sorting_text">Giá</span>
+                        <span class="sorting_text">Tất cả</span>
                         <i class="fa fa-chevron-down"></i>
                         <ul>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }' data-parent=".price_sorting"><span>Tất cả</span></li>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "price" }' data-parent=".price_sorting"><span>Tăng dần</span></li>
                         </ul>
                     </li>
-                    <li>
-                        <span class="sorting_text">Vị trí</span>
+                    <li class="distance_item">
+                        <span class="sorting_text">Mặc định</span>
                         <i class="fa fa-chevron-down"></i>
                         <ul>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }'><span>Mặc định</span></li>
@@ -32,20 +36,20 @@
                         </ul>
                     </li>
                     <li>
-                        <span class="sorting_text">Đánh giá</span>
+                        <span class="sorting_text">Tất cả</span>
                         <i class="fa fa-chevron-down"></i>
                         <ul>
                             <li class="filter_btn" data-filter="*"><span>Tất cả</span></li>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "stars" }'><span>Tăng dần</span></li>
-                            <li class="filter_btn" data-filter=".rating_1"><span>1</span></li>
-                            <li class="filter_btn" data-filter=".rating_2"><span>2</span></li>
-                            <li class="filter_btn" data-filter=".rating_3"><span>3</span></li>
-                            <li class="filter_btn" data-filter=".rating_4"><span>4</span></li>
-                            <li class="filter_btn" data-filter=".rating_5"><span>5</span></li>
+                            <li class="filter_btn" data-filter=".rating_1"><span>1 sao</span></li>
+                            <li class="filter_btn" data-filter=".rating_2"><span>2 sao</span></li>
+                            <li class="filter_btn" data-filter=".rating_3"><span>3 sao</span></li>
+                            <li class="filter_btn" data-filter=".rating_4"><span>4 sao</span></li>
+                            <li class="filter_btn" data-filter=".rating_5"><span>5 sao</span></li>
                         </ul>
                     </li>
-                    <li class="distance_item">
-                        <span class="sorting_text">Số ghế trống</span>
+                    <li>
+                        <span class="sorting_text">Tất cả</span>
                         <i class="fa fa-chevron-down"></i>
                         <ul>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }' data-parent=".ghe_sorting"><span>Tất cả</span></li>
@@ -53,7 +57,7 @@
                         </ul>
                     </li>
                     <li>
-                        <span class="sorting_text">reviews</span>
+                        <span class="sorting_text">Tất cả</span>
                         <i class="fa fa-chevron-down"></i>
                         <ul>
                             <li class="sort_btn" data-isotope-option='{ "sortBy": "original-order" }' data-parent=".review_sorting"><span>Tất cả</span></li>
@@ -74,14 +78,14 @@
                             <div class="col-lg-1 temp_col"></div>
                             <div class="col-lg-3 col-1680-4">
                                 <div class="offers_image_container">
-                                    <div class="offers_image_background" style="background-image:url(Content/images/@item.HINHANH)"></div>
+                                    <img class="offers_image_background" src="~/Content/images/@item.HINHANH">
                                     <div class="offer_khoihanh"><a href="single_listing.html">@item.DIEMDON - @item.DIEMDEN</a></div>
                                     <div class="offer_name"><a href="single_listing.html">@item.TENVE</a></div>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="offers_content">
-                                    <div class="offers_price">@item.GIAVE&#273<span>Khởi hành lúc @item.THOIGIANDON</span></div>
+                                    <div class="offers_price">@item.GIAVE&#273<span class="khoihanh">Khởi hành lúc @item.THOIGIANDON</span></div><br /><span class="sos">@item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</span>
                                     <div class="rating_r rating_r_@item.SOSAO offers_rating" data-rating="@item.SOSAO">
                                         <i></i>
                                         <i></i>
