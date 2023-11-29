@@ -36,9 +36,6 @@ namespace QL_DatVeXe.Models
     partial void InsertXACNHANHOADON(XACNHANHOADON instance);
     partial void UpdateXACNHANHOADON(XACNHANHOADON instance);
     partial void DeleteXACNHANHOADON(XACNHANHOADON instance);
-    partial void InsertDANHGIA(DANHGIA instance);
-    partial void UpdateDANHGIA(DANHGIA instance);
-    partial void DeleteDANHGIA(DANHGIA instance);
     partial void InsertHOADON(HOADON instance);
     partial void UpdateHOADON(HOADON instance);
     partial void DeleteHOADON(HOADON instance);
@@ -60,6 +57,9 @@ namespace QL_DatVeXe.Models
     partial void InsertVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
     partial void UpdateVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
     partial void DeleteVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
+    partial void InsertDANHGIA(DANHGIA instance);
+    partial void UpdateDANHGIA(DANHGIA instance);
+    partial void DeleteDANHGIA(DANHGIA instance);
     #endregion
 		
 		public QL_DATVEXEDataContext() : 
@@ -105,14 +105,6 @@ namespace QL_DatVeXe.Models
 			get
 			{
 				return this.GetTable<XACNHANHOADON>();
-			}
-		}
-		
-		public System.Data.Linq.Table<DANHGIA> DANHGIAs
-		{
-			get
-			{
-				return this.GetTable<DANHGIA>();
 			}
 		}
 		
@@ -169,6 +161,14 @@ namespace QL_DatVeXe.Models
 			get
 			{
 				return this.GetTable<VEXETRONGGIOHANG>();
+			}
+		}
+		
+		public System.Data.Linq.Table<DANHGIA> DANHGIAs
+		{
+			get
+			{
+				return this.GetTable<DANHGIA>();
 			}
 		}
 	}
@@ -557,246 +557,6 @@ namespace QL_DatVeXe.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANHGIA")]
-	public partial class DANHGIA : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MAKH;
-		
-		private int _MAVE;
-		
-		private string _NOIDUNG;
-		
-		private System.Nullable<int> _SOSAO;
-		
-		private System.Nullable<System.DateTime> _NGAYDG;
-		
-		private EntityRef<KHACHHANG> _KHACHHANG;
-		
-		private EntityRef<VEXE> _VEXE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMAKHChanging(int value);
-    partial void OnMAKHChanged();
-    partial void OnMAVEChanging(int value);
-    partial void OnMAVEChanged();
-    partial void OnNOIDUNGChanging(string value);
-    partial void OnNOIDUNGChanged();
-    partial void OnSOSAOChanging(System.Nullable<int> value);
-    partial void OnSOSAOChanged();
-    partial void OnNGAYDGChanging(System.Nullable<System.DateTime> value);
-    partial void OnNGAYDGChanged();
-    #endregion
-		
-		public DANHGIA()
-		{
-			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			this._VEXE = default(EntityRef<VEXE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MAKH
-		{
-			get
-			{
-				return this._MAKH;
-			}
-			set
-			{
-				if ((this._MAKH != value))
-				{
-					if (this._KHACHHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAKHChanging(value);
-					this.SendPropertyChanging();
-					this._MAKH = value;
-					this.SendPropertyChanged("MAKH");
-					this.OnMAKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVE", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MAVE
-		{
-			get
-			{
-				return this._MAVE;
-			}
-			set
-			{
-				if ((this._MAVE != value))
-				{
-					if (this._VEXE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAVEChanging(value);
-					this.SendPropertyChanging();
-					this._MAVE = value;
-					this.SendPropertyChanged("MAVE");
-					this.OnMAVEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNG", DbType="NVarChar(MAX)")]
-		public string NOIDUNG
-		{
-			get
-			{
-				return this._NOIDUNG;
-			}
-			set
-			{
-				if ((this._NOIDUNG != value))
-				{
-					this.OnNOIDUNGChanging(value);
-					this.SendPropertyChanging();
-					this._NOIDUNG = value;
-					this.SendPropertyChanged("NOIDUNG");
-					this.OnNOIDUNGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOSAO", DbType="Int")]
-		public System.Nullable<int> SOSAO
-		{
-			get
-			{
-				return this._SOSAO;
-			}
-			set
-			{
-				if ((this._SOSAO != value))
-				{
-					this.OnSOSAOChanging(value);
-					this.SendPropertyChanging();
-					this._SOSAO = value;
-					this.SendPropertyChanged("SOSAO");
-					this.OnSOSAOChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDG", DbType="DateTime")]
-		public System.Nullable<System.DateTime> NGAYDG
-		{
-			get
-			{
-				return this._NGAYDG;
-			}
-			set
-			{
-				if ((this._NGAYDG != value))
-				{
-					this.OnNGAYDGChanging(value);
-					this.SendPropertyChanging();
-					this._NGAYDG = value;
-					this.SendPropertyChanged("NGAYDG");
-					this.OnNGAYDGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DANHGIA", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
-		public KHACHHANG KHACHHANG
-		{
-			get
-			{
-				return this._KHACHHANG.Entity;
-			}
-			set
-			{
-				KHACHHANG previousValue = this._KHACHHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHHANG.Entity = null;
-						previousValue.DANHGIAs.Remove(this);
-					}
-					this._KHACHHANG.Entity = value;
-					if ((value != null))
-					{
-						value.DANHGIAs.Add(this);
-						this._MAKH = value.MAKH;
-					}
-					else
-					{
-						this._MAKH = default(int);
-					}
-					this.SendPropertyChanged("KHACHHANG");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_DANHGIA", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
-		public VEXE VEXE
-		{
-			get
-			{
-				return this._VEXE.Entity;
-			}
-			set
-			{
-				VEXE previousValue = this._VEXE.Entity;
-				if (((previousValue != value) 
-							|| (this._VEXE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._VEXE.Entity = null;
-						previousValue.DANHGIAs.Remove(this);
-					}
-					this._VEXE.Entity = value;
-					if ((value != null))
-					{
-						value.DANHGIAs.Add(this);
-						this._MAVE = value.MAVE;
-					}
-					else
-					{
-						this._MAVE = default(int);
-					}
-					this.SendPropertyChanged("VEXE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HOADON")]
 	public partial class HOADON : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1078,11 +838,11 @@ namespace QL_DatVeXe.Models
 		
 		private string _TRANGTHAI;
 		
-		private EntitySet<DANHGIA> _DANHGIAs;
-		
 		private EntitySet<HOADON> _HOADONs;
 		
 		private EntitySet<VEXETRONGGIOHANG> _VEXETRONGGIOHANGs;
+		
+		private EntitySet<DANHGIA> _DANHGIAs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1112,9 +872,9 @@ namespace QL_DatVeXe.Models
 		
 		public KHACHHANG()
 		{
-			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
 			this._VEXETRONGGIOHANGs = new EntitySet<VEXETRONGGIOHANG>(new Action<VEXETRONGGIOHANG>(this.attach_VEXETRONGGIOHANGs), new Action<VEXETRONGGIOHANG>(this.detach_VEXETRONGGIOHANGs));
+			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
 			OnCreated();
 		}
 		
@@ -1318,19 +1078,6 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DANHGIA", Storage="_DANHGIAs", ThisKey="MAKH", OtherKey="MAKH")]
-		public EntitySet<DANHGIA> DANHGIAs
-		{
-			get
-			{
-				return this._DANHGIAs;
-			}
-			set
-			{
-				this._DANHGIAs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_HOADON", Storage="_HOADONs", ThisKey="MAKH", OtherKey="MAKH")]
 		public EntitySet<HOADON> HOADONs
 		{
@@ -1357,6 +1104,19 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DANHGIA", Storage="_DANHGIAs", ThisKey="MAKH", OtherKey="MAKH")]
+		public EntitySet<DANHGIA> DANHGIAs
+		{
+			get
+			{
+				return this._DANHGIAs;
+			}
+			set
+			{
+				this._DANHGIAs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -1375,18 +1135,6 @@ namespace QL_DatVeXe.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_DANHGIAs(DANHGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHHANG = this;
-		}
-		
-		private void detach_DANHGIAs(DANHGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.KHACHHANG = null;
 		}
 		
 		private void attach_HOADONs(HOADON entity)
@@ -1408,6 +1156,18 @@ namespace QL_DatVeXe.Models
 		}
 		
 		private void detach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHACHHANG = null;
+		}
+		
+		private void attach_DANHGIAs(DANHGIA entity)
+		{
+			this.SendPropertyChanging();
+			entity.KHACHHANG = this;
+		}
+		
+		private void detach_DANHGIAs(DANHGIA entity)
 		{
 			this.SendPropertyChanging();
 			entity.KHACHHANG = null;
@@ -2043,9 +1803,9 @@ namespace QL_DatVeXe.Models
 		
 		private EntitySet<CHITIETHOADON> _CHITIETHOADONs;
 		
-		private EntitySet<DANHGIA> _DANHGIAs;
-		
 		private EntitySet<VEXETRONGGIOHANG> _VEXETRONGGIOHANGs;
+		
+		private EntitySet<DANHGIA> _DANHGIAs;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2082,8 +1842,8 @@ namespace QL_DatVeXe.Models
 		public VEXE()
 		{
 			this._CHITIETHOADONs = new EntitySet<CHITIETHOADON>(new Action<CHITIETHOADON>(this.attach_CHITIETHOADONs), new Action<CHITIETHOADON>(this.detach_CHITIETHOADONs));
-			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
 			this._VEXETRONGGIOHANGs = new EntitySet<VEXETRONGGIOHANG>(new Action<VEXETRONGGIOHANG>(this.attach_VEXETRONGGIOHANGs), new Action<VEXETRONGGIOHANG>(this.detach_VEXETRONGGIOHANGs));
+			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
 			OnCreated();
 		}
 		
@@ -2360,19 +2120,6 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_DANHGIA", Storage="_DANHGIAs", ThisKey="MAVE", OtherKey="MAVE")]
-		public EntitySet<DANHGIA> DANHGIAs
-		{
-			get
-			{
-				return this._DANHGIAs;
-			}
-			set
-			{
-				this._DANHGIAs.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXETRONGGIOHANG", Storage="_VEXETRONGGIOHANGs", ThisKey="MAVE", OtherKey="MAVE")]
 		public EntitySet<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
 		{
@@ -2383,6 +2130,19 @@ namespace QL_DatVeXe.Models
 			set
 			{
 				this._VEXETRONGGIOHANGs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_DANHGIA", Storage="_DANHGIAs", ThisKey="MAVE", OtherKey="MAVE")]
+		public EntitySet<DANHGIA> DANHGIAs
+		{
+			get
+			{
+				return this._DANHGIAs;
+			}
+			set
+			{
+				this._DANHGIAs.Assign(value);
 			}
 		}
 		
@@ -2418,18 +2178,6 @@ namespace QL_DatVeXe.Models
 			entity.VEXE = null;
 		}
 		
-		private void attach_DANHGIAs(DANHGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.VEXE = this;
-		}
-		
-		private void detach_DANHGIAs(DANHGIA entity)
-		{
-			this.SendPropertyChanging();
-			entity.VEXE = null;
-		}
-		
 		private void attach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
 		{
 			this.SendPropertyChanging();
@@ -2437,6 +2185,18 @@ namespace QL_DatVeXe.Models
 		}
 		
 		private void detach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		{
+			this.SendPropertyChanging();
+			entity.VEXE = null;
+		}
+		
+		private void attach_DANHGIAs(DANHGIA entity)
+		{
+			this.SendPropertyChanging();
+			entity.VEXE = this;
+		}
+		
+		private void detach_DANHGIAs(DANHGIA entity)
 		{
 			this.SendPropertyChanging();
 			entity.VEXE = null;
@@ -2603,6 +2363,294 @@ namespace QL_DatVeXe.Models
 					if ((value != null))
 					{
 						value.VEXETRONGGIOHANGs.Add(this);
+						this._MAVE = value.MAVE;
+					}
+					else
+					{
+						this._MAVE = default(int);
+					}
+					this.SendPropertyChanged("VEXE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.DANHGIA")]
+	public partial class DANHGIA : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MAKH;
+		
+		private int _MAVE;
+		
+		private string _TIEUDE;
+		
+		private string _NOIDUNG;
+		
+		private System.Nullable<int> _SOSAO;
+		
+		private string _HINHANH;
+		
+		private System.Nullable<System.DateTime> _NGAYDG;
+		
+		private EntityRef<KHACHHANG> _KHACHHANG;
+		
+		private EntityRef<VEXE> _VEXE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAKHChanging(int value);
+    partial void OnMAKHChanged();
+    partial void OnMAVEChanging(int value);
+    partial void OnMAVEChanged();
+    partial void OnTIEUDEChanging(string value);
+    partial void OnTIEUDEChanged();
+    partial void OnNOIDUNGChanging(string value);
+    partial void OnNOIDUNGChanged();
+    partial void OnSOSAOChanging(System.Nullable<int> value);
+    partial void OnSOSAOChanged();
+    partial void OnHINHANHChanging(string value);
+    partial void OnHINHANHChanged();
+    partial void OnNGAYDGChanging(System.Nullable<System.DateTime> value);
+    partial void OnNGAYDGChanged();
+    #endregion
+		
+		public DANHGIA()
+		{
+			this._KHACHHANG = default(EntityRef<KHACHHANG>);
+			this._VEXE = default(EntityRef<VEXE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAKH
+		{
+			get
+			{
+				return this._MAKH;
+			}
+			set
+			{
+				if ((this._MAKH != value))
+				{
+					if (this._KHACHHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAKHChanging(value);
+					this.SendPropertyChanging();
+					this._MAKH = value;
+					this.SendPropertyChanged("MAKH");
+					this.OnMAKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVE", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAVE
+		{
+			get
+			{
+				return this._MAVE;
+			}
+			set
+			{
+				if ((this._MAVE != value))
+				{
+					if (this._VEXE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAVEChanging(value);
+					this.SendPropertyChanging();
+					this._MAVE = value;
+					this.SendPropertyChanged("MAVE");
+					this.OnMAVEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TIEUDE", DbType="NVarChar(50)")]
+		public string TIEUDE
+		{
+			get
+			{
+				return this._TIEUDE;
+			}
+			set
+			{
+				if ((this._TIEUDE != value))
+				{
+					this.OnTIEUDEChanging(value);
+					this.SendPropertyChanging();
+					this._TIEUDE = value;
+					this.SendPropertyChanged("TIEUDE");
+					this.OnTIEUDEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NOIDUNG", DbType="NVarChar(MAX)")]
+		public string NOIDUNG
+		{
+			get
+			{
+				return this._NOIDUNG;
+			}
+			set
+			{
+				if ((this._NOIDUNG != value))
+				{
+					this.OnNOIDUNGChanging(value);
+					this.SendPropertyChanging();
+					this._NOIDUNG = value;
+					this.SendPropertyChanged("NOIDUNG");
+					this.OnNOIDUNGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOSAO", DbType="Int")]
+		public System.Nullable<int> SOSAO
+		{
+			get
+			{
+				return this._SOSAO;
+			}
+			set
+			{
+				if ((this._SOSAO != value))
+				{
+					this.OnSOSAOChanging(value);
+					this.SendPropertyChanging();
+					this._SOSAO = value;
+					this.SendPropertyChanged("SOSAO");
+					this.OnSOSAOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HINHANH", DbType="VarChar(50)")]
+		public string HINHANH
+		{
+			get
+			{
+				return this._HINHANH;
+			}
+			set
+			{
+				if ((this._HINHANH != value))
+				{
+					this.OnHINHANHChanging(value);
+					this.SendPropertyChanging();
+					this._HINHANH = value;
+					this.SendPropertyChanged("HINHANH");
+					this.OnHINHANHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDG", DbType="DateTime")]
+		public System.Nullable<System.DateTime> NGAYDG
+		{
+			get
+			{
+				return this._NGAYDG;
+			}
+			set
+			{
+				if ((this._NGAYDG != value))
+				{
+					this.OnNGAYDGChanging(value);
+					this.SendPropertyChanging();
+					this._NGAYDG = value;
+					this.SendPropertyChanged("NGAYDG");
+					this.OnNGAYDGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_DANHGIA", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
+		public KHACHHANG KHACHHANG
+		{
+			get
+			{
+				return this._KHACHHANG.Entity;
+			}
+			set
+			{
+				KHACHHANG previousValue = this._KHACHHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHACHHANG.Entity = null;
+						previousValue.DANHGIAs.Remove(this);
+					}
+					this._KHACHHANG.Entity = value;
+					if ((value != null))
+					{
+						value.DANHGIAs.Add(this);
+						this._MAKH = value.MAKH;
+					}
+					else
+					{
+						this._MAKH = default(int);
+					}
+					this.SendPropertyChanged("KHACHHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_DANHGIA", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
+		public VEXE VEXE
+		{
+			get
+			{
+				return this._VEXE.Entity;
+			}
+			set
+			{
+				VEXE previousValue = this._VEXE.Entity;
+				if (((previousValue != value) 
+							|| (this._VEXE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._VEXE.Entity = null;
+						previousValue.DANHGIAs.Remove(this);
+					}
+					this._VEXE.Entity = value;
+					if ((value != null))
+					{
+						value.DANHGIAs.Add(this);
 						this._MAVE = value.MAVE;
 					}
 					else

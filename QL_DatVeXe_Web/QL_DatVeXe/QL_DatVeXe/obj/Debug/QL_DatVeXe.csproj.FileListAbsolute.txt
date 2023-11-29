@@ -69,8 +69,8 @@ C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\bin\System.Web
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\bin\Newtonsoft.Json.xml
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\bin\Antlr3.Runtime.pdb
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csprojAssemblyReference.cache
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csproj.CoreCompileInputs.cache
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csproj.CopyComplete
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.dll
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.pdb
+C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csprojAssemblyReference.cache

@@ -13,6 +13,8 @@ namespace QL_DatVeXe.Controllers
         // GET: VeXe
         public ActionResult ShowAllVeXe(int? page)
         {
+            Session["TB"] = "";
+
             var user = Session["user"] as string;
             if (string.IsNullOrEmpty(user))
                 Session["user"] = string.Empty;
@@ -28,6 +30,8 @@ namespace QL_DatVeXe.Controllers
 
         public ActionResult TimVe(int? page, string diemdon, string diemden, DateTime? ngaydi, DateTime? ngayve)
         {
+            Session["TB"] = "";
+
             var listVeXe = new List<VEXE>();
             var user = Session["user"] as string;
             if (string.IsNullOrEmpty(user))
@@ -152,6 +156,57 @@ namespace QL_DatVeXe.Controllers
             ViewBag.TotalPages = Math.Ceiling((double)listVeXe.Count() / itemsPerPage);
             ViewBag.CurrentPage = pageNumber;
             return View(listVeXe);
+        }
+
+        public ActionResult XemChiTietVeXe(int mave, string diemden)
+        {
+            var vexe = db.VEXEs.SingleOrDefault(t => t.MAVE == mave);
+            var listvexe = db.VEXEs.Where(t => t.DIEMDEN == diemden).ToList();
+            var listdanhgia = db.DANHGIAs.Where(t => t.MAVE == mave);
+            VeXeViewModel vexeviewmodel = new VeXeViewModel
+            {
+                VeXe = vexe,
+                ListVeXe = listvexe,
+                ListDanhGia = listdanhgia
+            };
+            return View(vexeviewmodel);
+        }
+
+        public ActionResult DanhGia(DANHGIA dg, string tieude, string comment, int sao, int maVe, string diemDen)
+        {
+            var user = Session["user"] as string;
+            if (string.IsNullOrEmpty(user))
+            {
+                Session["user"] = string.Empty;
+                return RedirectToAction("DangNhap", "NguoiDung");
+            }
+
+            var anh = "";
+            var kh = db.KHACHHANGs.SingleOrDefault(t => t.TENKH == user);
+            var vexe = db.VEXEs.SingleOrDefault(t => t.MAVE == maVe);
+            var danhgia = db.DANHGIAs.SingleOrDefault(t => t.MAKH == kh.MAKH && t.MAVE == maVe);
+
+            if (kh.GIOITINH == "Nam")
+                anh = "review_2.jpg";
+            else
+                anh = "review_1.jpg";
+
+            if (danhgia == null)
+            {
+                dg.MAKH = kh.MAKH;
+                dg.MAVE = vexe.MAVE;
+                dg.TIEUDE = tieude;
+                dg.NOIDUNG = comment;
+                dg.SOSAO = sao;
+                dg.HINHANH = anh;
+                dg.NGAYDG = DateTime.Now;
+                db.DANHGIAs.InsertOnSubmit(dg);
+                vexe.LUOTDANHGIA += 1;
+            }
+            else
+                Session["TB"] = "Bạn đã đánh giá vé xe này";
+            db.SubmitChanges();
+            return RedirectToAction("XemChiTietVeXe", "VeXe", new { mave = maVe, diemden = diemDen });
         }
     }
 }
