@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /******************************
@@ -759,42 +759,6 @@ section
 4. Home
 *********************************/
 
-.home
-{
-	width: 100%;
-	height: 465px;
-	background: transparent;
-}
-.home_background
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center center;
-}
-.home_content
-{
-	position: absolute;
-	bottom: 106px;
-	left: 50%;
-	-webkit-transform: translateX(-50%);
-	-moz-transform: translateX(-50%);
-	-ms-transform: translateX(-50%);
-	-o-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
-.home_title
-{
-	font-size: 72px;
-	font-weight: 800;
-	color: #FFFFFF;
-	text-transform: uppercase;
-	white-space: nowrap;
-}
 
 /*********************************
 6. Section Title
@@ -1334,17 +1298,27 @@ section
 {
 	width: 100%;
 }
-.hotel_review_container
-{
-	position: absolute;
-	top: 22px;
-	right: 22px;
-	width: 209px;
-	height: 112px;
-	background: #FFFFFF;
-	visibility: hidden;
-	opacity: 0;
-	animation: review_anim 1s 0.5s forwards;
+.offers_price_content {
+    position: relative;
+    left: 270px;
+    top: 15px;
+}
+.khoihanh-fontweight {
+    font-weight: bold;
+    color: black;
+}
+.hotel_review_container {
+    position: absolute;
+    top: 22px;
+    right: 22px;
+    width: 229px;
+    height: 112px;
+    background-color: rgba(224, 181, 114, 0.49);
+    opacity: 0.5;
+    visibility: hidden;
+    opacity: 0;
+    animation: review_anim 1s 0.5s forwards;
+    border-radius:20px;
 }
 @keyframes review_anim
 {
@@ -1369,35 +1343,42 @@ section
 }
 .hotel_review_title
 {
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 700;
 	color: #2d2c2c;
 	text-transform: uppercase;
 }
 .hotel_review_subtitle
 {
-	font-size: 12px;
+    padding-top:5px;
+	font-size: 13px;
 	font-weight: 600;
-	color: #929191;
+	color: #2d2c2c;
 	margin-top: 1px;
 }
-.hotel_review_rating
-{
-	display: inline-block;
-	width: 62px;
-	height: 57px;
-	font-size: 28px;
-	font-weight: 700;
-	color: #FFFFFF;
-	line-height: 57px;
-	background: #fa9e1b;
-	vertical-align: middle;
-	border-radius: 45%;
-	-webkit-transform: translateY(-4px);
-	-moz-transform: translateY(-4px);
-	-ms-transform: translateY(-4px);
-	-o-transform: translateY(-4px);
-	transform: translateY(-4px);
+.hotel_ghe_subtitle {
+    padding-top: 5px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2d2c2c;
+    margin-top: 1px;
+}
+.hotel_review_rating {
+    display: inline-block;
+    width: 62px;
+    height: 57px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 57px;
+    background: #fa9e1b;
+    vertical-align: middle;
+    border-radius: 45%;
+    -webkit-transform: translateY(-4px);
+    -moz-transform: translateY(-4px);
+    -ms-transform: translateY(-4px);
+    -o-transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 /*********************************
@@ -1463,7 +1444,8 @@ section
 }
 .hotel_info_text p
 {
-	color: #929191;
+    font-size:17px;
+	color: #2d2c2c;
 }
 
 /*********************************
@@ -1512,6 +1494,31 @@ section
 {
 	
 }
+.diemden_cungloai {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    color: #fa9e1b;
+    font-size: 23px;
+    font-weight: bold;
+}
+.room_khoihanh {
+    position: absolute;
+    left: 15px;
+    bottom: 5px;
+    width: 160px;
+    height: 33px;
+    background-color: rgba(247, 177, 117, 0.50);
+    overflow: hidden;
+}
+.room_khoihanh a {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #929191;
+    line-height: 35px;
+    padding-left: 32px;
+}
+
 .room_title
 {
 	font-size: 16px;
@@ -1519,12 +1526,18 @@ section
 	color: #2d2c2c;
 	margin-top: -5px;
 }
-.room_price
-{
-	font-size: 16px;
-	font-weight: 600;
-	color: #929191;
-	margin-top: 9px;
+
+.room_diadiem {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fa9e1b;
+    margin-top: 9px;
+}
+.room_price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d2c2c;
+    margin-top: 9px;
 }
 .room_text
 {
@@ -1629,6 +1642,71 @@ section
 	margin-top: 4px;
 }
 
+/*Comment*/
+.li-blog-comment-wrapper h3 {
+	color: #242424;
+	font-size: 18px;
+	font-weight: 600;
+	padding: 0 0 26px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e1e1e1;
+	margin-bottom: 0;
+}
+.li-blog-comment-wrapper h2 {
+    color: #fc142b;
+    font-weight: 600;
+    padding-bottom:20px;
+    border-bottom: 1px solid #e1e1e1;
+    margin-bottom: 0;
+}
+.li-blog-comment-wrapper p {
+	padding: 25px 0 3px;
+}
+.li-blog-comment-wrapper .comment-post-box label {
+	color: #242424;
+	font-weight: 600;
+	margin-bottom: 25px;
+	display: block;
+	text-transform: capitalize;
+}
+.li-blog-comment-wrapper .comment-post-box textarea {
+	height: 130px;
+	margin-bottom: 20px;
+	padding: 10px;
+	width: 100%;
+	background: #f8f8f8;
+	border: none;
+}
+.li-blog-comment-wrapper .comment-post-box .coment-field {
+	background: #f8f8f8;
+	border: none;
+	color: #666666;
+	padding: 8px 10px;
+	width: 100%;
+}
+.li-btn-2 {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 40px;
+    border: none;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background-color: #fa9e1b;
+    margin-top:20px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+.li-btn-2:focus {
+	background-color: #fed700;
+}
+.li-btn-2:hover {
+	color: #ffffff;
+	background-color: #242424;
+}
 /*********************************
 12. Location on Map
 *********************************/

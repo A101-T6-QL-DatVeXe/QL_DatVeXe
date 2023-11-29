@@ -78,14 +78,16 @@
                             <div class="col-lg-1 temp_col"></div>
                             <div class="col-lg-3 col-1680-4">
                                 <div class="offers_image_container">
-                                    <img class="offers_image_background" src="~/Content/images/@item.HINHANH">
+                                    <a href="@Url.Action("XemChiTietVeXe", "VeXe", new { mave = item.MAVE, diemden = item.DIEMDEN })">
+                                        <img class="offers_image_background" src="~/Content/images/@item.HINHANH">
+                                    </a>
                                     <div class="offer_khoihanh"><a href="single_listing.html">@item.DIEMDON - @item.DIEMDEN</a></div>
                                     <div class="offer_name"><a href="single_listing.html">@item.TENVE</a></div>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="offers_content">
-                                    <div class="offers_price">@item.GIAVE&#273<span class="khoihanh">Khởi hành lúc @item.THOIGIANDON</span></div><br /><span class="sos">@item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</span>
+                                    <div class="offers_price">@item.GIAVE&ETH<span class="khoihanh">Khởi hành lúc @item.THOIGIANDON</span></div><br /><span class="sos">@item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</span>
                                     <div class="rating_r rating_r_@item.SOSAO offers_rating" data-rating="@item.SOSAO">
                                         <i></i>
                                         <i></i>

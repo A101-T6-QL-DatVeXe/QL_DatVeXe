@@ -132,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_DATVEXE.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\VeXeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -492,6 +493,7 @@
     <Content Include="Views\NguoiDung\DangKy.cshtml" />
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\VeXe\TimVe.cshtml" />
+    <Content Include="Views\VeXe\XemChiTietVeXe.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
