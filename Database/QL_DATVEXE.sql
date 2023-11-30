@@ -17,10 +17,10 @@ CREATE TABLE NHANVIEN (
 -- Bảng tài khoản nhân viên
 GO
 CREATE TABLE TAIKHOANNV (
-    TAIKHOAN VARCHAR(50) PRIMARY KEY,
-    MATKHAU VARCHAR(50) NOT NULL,
+    TAIKHOAN NVARCHAR(50) PRIMARY KEY,
+    MATKHAU NVARCHAR(50) NOT NULL,
 	MANV INT UNIQUE,
-	QUYEN NVARCHAR(10) NOT NULL,
+	QUYEN INT NOT NULL,
 	FOREIGN KEY (MANV) REFERENCES NHANVIEN(MANV),
 );
 
@@ -148,3 +148,9 @@ VALUES (N'Luxury Van Limousine',320000,13,N'Ninh Bình',N'Quảng Ninh', '2023-1
 	   (N'Deluxe Bus',450000,30, N'Hà Nội', N'Hồ Chí Minh', '2023-12-10', '2023-12-13', N'09 giờ 30 phút', 5,66,N'Giường nằm 40 chỗ có toilet', 'offer_2.jpg'),
 	   (N'Luxury Van Limousine',320000,30, N'Hải Phòng', N'Hạ Long', '2023-12-04', '2023-12-07', N'08 giờ', 1,48,N'Giường nằm 40 chỗ có toilet', 'offer_3.jpg'),
 	   (N'Premium Van',300000,33, N'Đà Lạt', N'Đà Nẵng', '2023-12-08', '2023-12-11', N'09 giờ 30 phút', 2,47,N'Giường nằm 40 chỗ có toilet', 'offer_4.jpg');
+
+GO
+INSERT INTO NHANVIEN
+VALUES (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
+(N'Nguyễn Nguyên Bảo', '2002-12-21',N'Nam', N'Củ Chi', N'0328467926', N'Đang làm'),
+(N'Trần Quang Hậu', '2002-12-12',N'Nam', N'Đồng Nai', N'0328467928', N'Đang làm');

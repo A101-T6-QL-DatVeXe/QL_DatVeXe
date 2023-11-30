@@ -1,0 +1,7 @@
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\obj\Debug\BLL_DAL.csproj.AssemblyReference.cache
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\obj\Debug\BLL_DAL.csproj.CoreCompileInputs.cache
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\bin\Debug\BLL_DAL.dll.config
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\bin\Debug\BLL_DAL.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\bin\Debug\BLL_DAL.pdb
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\obj\Debug\BLL_DAL.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\BLL_DAL\obj\Debug\BLL_DAL.pdb
