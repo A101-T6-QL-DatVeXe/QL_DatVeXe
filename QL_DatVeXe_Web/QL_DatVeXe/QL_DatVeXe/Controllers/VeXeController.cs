@@ -53,7 +53,7 @@ namespace QL_DatVeXe.Controllers
             }
             else if (!diemdon.Equals("Chọn nơi xuất phát") && !diemden.Equals("Chọn nơi đến") && ngaydi != null && ngayve == null)
             {
-                listVeXe = db.VEXEs.Where(t => t.DIEMDON == diemdon && t.DIEMDEN == diemden && t.NGAYDI == ngaydi).Skip((pageNumber - 1) * itemsPerPage).Take(itemsPerPage).ToList();
+                listVeXe = db.VEXEs.Where(t => t.DIEMDON == diemdon && t.DIEMDEN == diemden && t.NGAYDI == ngaydi).ToList();
             }
             else if (!diemdon.Equals("Chọn nơi xuất phát") && !diemden.Equals("Chọn nơi đến") && ngaydi == null && ngayve == null)
             {
@@ -201,7 +201,6 @@ namespace QL_DatVeXe.Controllers
                 dg.HINHANH = anh;
                 dg.NGAYDG = DateTime.Now;
                 db.DANHGIAs.InsertOnSubmit(dg);
-                vexe.LUOTDANHGIA += 1;
             }
             else
                 Session["TB"] = "Bạn đã đánh giá vé xe này";
