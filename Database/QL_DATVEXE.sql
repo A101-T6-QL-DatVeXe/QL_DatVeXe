@@ -1,4 +1,4 @@
-﻿CREATE DATABASE QL_DATVEXE
+﻿﻿CREATE DATABASE QL_DATVEXE
 GO
 USE QL_DATVEXE
 
@@ -223,3 +223,15 @@ VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui ve
 		(6,18, N'', N'', 3, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(1,19, N'', N'', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,20, N'', N'', 5, 'review_1.jpg', '2023-12-01 01:24:36.180');
+GO
+INSERT INTO NHANVIEN
+VALUES  (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
+		(N'Nguyễn Nguyên Bảo', '2002-12-21',N'Nam', N'Củ Chi', N'0328467926', N'Đang làm'),
+		(N'Trần Quang Hậu', '2002-12-12',N'Nam', N'Đồng Nai', N'0328467928', N'Đang làm');
+
+GO
+INSERT INTO TAIKHOANNV
+VALUES  (N'tantruong', N'123456', 1, N'Quản lí'),
+		(N'nguyenbao', N'123456', 2, N'Nhân viên'),
+		(N'quanghau', N'123456', 3, N'Nhân viên');
+
