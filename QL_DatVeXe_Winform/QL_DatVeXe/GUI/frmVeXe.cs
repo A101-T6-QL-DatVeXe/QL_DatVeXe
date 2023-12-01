@@ -45,6 +45,7 @@ namespace GUI
         private void btnMoi_Click(object sender, EventArgs e)
         {
             setEnabledText(true);
+            txtMaVe.ResetText();
             txtTenVe.ResetText();
             txtGiaVe.ResetText();
             txtGheTrong.ResetText();
@@ -63,7 +64,6 @@ namespace GUI
             btnThem.Enabled = false;
 
             VEXE vx = new VEXE();
-            vx.MAVE = Int32.Parse(txtMaVe.Text);
             vx.TENVE = txtTenVe.Text;
             vx.GIAVE = Int32.Parse(txtGiaVe.Text);
             vx.CONTRONG = Int32.Parse(txtGheTrong.Text);

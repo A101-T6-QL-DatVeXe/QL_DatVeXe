@@ -33,3 +33,4 @@ D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Util
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.XtraEditors.v23.1.xml
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\obj\Debug\GUI.frmLogin.resources

@@ -34,6 +34,26 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtGiaVe = new System.Windows.Forms.TextBox();
+            this.txtDiemDen = new System.Windows.Forms.TextBox();
+            this.txtTenVe = new System.Windows.Forms.TextBox();
+            this.txtDiemDon = new System.Windows.Forms.TextBox();
+            this.txtMaVe = new System.Windows.Forms.TextBox();
+            this.txtGheTrong = new System.Windows.Forms.NumericUpDown();
+            this.txtPhut = new System.Windows.Forms.NumericUpDown();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtGio = new System.Windows.Forms.NumericUpDown();
+            this.txtNgayDi = new System.Windows.Forms.DateTimePicker();
+            this.txtNgayVe = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgvVeXe = new System.Windows.Forms.DataGridView();
             this.mAVEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,33 +66,13 @@
             this.nGAYVEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHOIGIANDONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vEXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtNgayVe = new System.Windows.Forms.DateTimePicker();
-            this.txtNgayDi = new System.Windows.Forms.DateTimePicker();
-            this.txtGio = new System.Windows.Forms.NumericUpDown();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtPhut = new System.Windows.Forms.NumericUpDown();
-            this.txtGheTrong = new System.Windows.Forms.NumericUpDown();
-            this.txtMaVe = new System.Windows.Forms.TextBox();
-            this.txtDiemDon = new System.Windows.Forms.TextBox();
-            this.txtTenVe = new System.Windows.Forms.TextBox();
-            this.txtDiemDen = new System.Windows.Forms.TextBox();
-            this.txtGiaVe = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGheTrong)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGio)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVeXe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vEXEBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhut)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGheTrong)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMoi
@@ -143,6 +143,189 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết Vé xe";
+            // 
+            // txtGiaVe
+            // 
+            this.txtGiaVe.Location = new System.Drawing.Point(437, 19);
+            this.txtGiaVe.Name = "txtGiaVe";
+            this.txtGiaVe.Size = new System.Drawing.Size(101, 20);
+            this.txtGiaVe.TabIndex = 24;
+            // 
+            // txtDiemDen
+            // 
+            this.txtDiemDen.Location = new System.Drawing.Point(437, 58);
+            this.txtDiemDen.Name = "txtDiemDen";
+            this.txtDiemDen.Size = new System.Drawing.Size(101, 20);
+            this.txtDiemDen.TabIndex = 23;
+            // 
+            // txtTenVe
+            // 
+            this.txtTenVe.Location = new System.Drawing.Point(251, 19);
+            this.txtTenVe.Name = "txtTenVe";
+            this.txtTenVe.Size = new System.Drawing.Size(117, 20);
+            this.txtTenVe.TabIndex = 22;
+            // 
+            // txtDiemDon
+            // 
+            this.txtDiemDon.Location = new System.Drawing.Point(254, 58);
+            this.txtDiemDon.Name = "txtDiemDon";
+            this.txtDiemDon.Size = new System.Drawing.Size(114, 20);
+            this.txtDiemDon.TabIndex = 21;
+            // 
+            // txtMaVe
+            // 
+            this.txtMaVe.Enabled = false;
+            this.txtMaVe.Location = new System.Drawing.Point(75, 19);
+            this.txtMaVe.Name = "txtMaVe";
+            this.txtMaVe.Size = new System.Drawing.Size(99, 20);
+            this.txtMaVe.TabIndex = 20;
+            // 
+            // txtGheTrong
+            // 
+            this.txtGheTrong.Enabled = false;
+            this.txtGheTrong.Location = new System.Drawing.Point(75, 59);
+            this.txtGheTrong.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.txtGheTrong.Name = "txtGheTrong";
+            this.txtGheTrong.Size = new System.Drawing.Size(99, 20);
+            this.txtGheTrong.TabIndex = 19;
+            // 
+            // txtPhut
+            // 
+            this.txtPhut.Enabled = false;
+            this.txtPhut.Location = new System.Drawing.Point(503, 94);
+            this.txtPhut.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.txtPhut.Name = "txtPhut";
+            this.txtPhut.Size = new System.Drawing.Size(35, 20);
+            this.txtPhut.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(479, 91);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 22);
+            this.label10.TabIndex = 17;
+            this.label10.Text = " :";
+            // 
+            // txtGio
+            // 
+            this.txtGio.Enabled = false;
+            this.txtGio.Location = new System.Drawing.Point(438, 94);
+            this.txtGio.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.txtGio.Name = "txtGio";
+            this.txtGio.Size = new System.Drawing.Size(35, 20);
+            this.txtGio.TabIndex = 16;
+            // 
+            // txtNgayDi
+            // 
+            this.txtNgayDi.Enabled = false;
+            this.txtNgayDi.Location = new System.Drawing.Point(60, 96);
+            this.txtNgayDi.Name = "txtNgayDi";
+            this.txtNgayDi.Size = new System.Drawing.Size(114, 20);
+            this.txtNgayDi.TabIndex = 15;
+            // 
+            // txtNgayVe
+            // 
+            this.txtNgayVe.Enabled = false;
+            this.txtNgayVe.Location = new System.Drawing.Point(254, 96);
+            this.txtNgayVe.Name = "txtNgayVe";
+            this.txtNgayVe.Size = new System.Drawing.Size(114, 20);
+            this.txtNgayVe.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(392, 96);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "Giờ Đi:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(197, 97);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Ngày Về:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(374, 61);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(57, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Điểm Đến:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(191, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(57, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Xuất Phát:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(389, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Giá Vé:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(191, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Tên Vé:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Ghế Trống: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 97);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Ngày Đi:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã Vé:";
             // 
             // groupBox1
             // 
@@ -233,188 +416,6 @@
             // 
             this.vEXEBindingSource.DataSource = typeof(BLL_DAL.VEXE);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Vé:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Ngày Đi:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Ghế Trống: ";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tên Vé:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(389, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Giá Vé:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(191, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Xuất Phát:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(374, 61);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Điểm Đến:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(197, 97);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(51, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Ngày Về:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(392, 96);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "Giờ Đi:";
-            // 
-            // txtNgayVe
-            // 
-            this.txtNgayVe.Enabled = false;
-            this.txtNgayVe.Location = new System.Drawing.Point(254, 96);
-            this.txtNgayVe.Name = "txtNgayVe";
-            this.txtNgayVe.Size = new System.Drawing.Size(114, 20);
-            this.txtNgayVe.TabIndex = 14;
-            // 
-            // txtNgayDi
-            // 
-            this.txtNgayDi.Enabled = false;
-            this.txtNgayDi.Location = new System.Drawing.Point(60, 96);
-            this.txtNgayDi.Name = "txtNgayDi";
-            this.txtNgayDi.Size = new System.Drawing.Size(114, 20);
-            this.txtNgayDi.TabIndex = 15;
-            // 
-            // txtGio
-            // 
-            this.txtGio.Enabled = false;
-            this.txtGio.Location = new System.Drawing.Point(438, 94);
-            this.txtGio.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.txtGio.Name = "txtGio";
-            this.txtGio.Size = new System.Drawing.Size(35, 20);
-            this.txtGio.TabIndex = 16;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(479, 91);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(20, 22);
-            this.label10.TabIndex = 17;
-            this.label10.Text = " :";
-            // 
-            // txtPhut
-            // 
-            this.txtPhut.Enabled = false;
-            this.txtPhut.Location = new System.Drawing.Point(503, 94);
-            this.txtPhut.Maximum = new decimal(new int[] {
-            59,
-            0,
-            0,
-            0});
-            this.txtPhut.Name = "txtPhut";
-            this.txtPhut.Size = new System.Drawing.Size(35, 20);
-            this.txtPhut.TabIndex = 18;
-            // 
-            // txtGheTrong
-            // 
-            this.txtGheTrong.Enabled = false;
-            this.txtGheTrong.Location = new System.Drawing.Point(75, 59);
-            this.txtGheTrong.Maximum = new decimal(new int[] {
-            23,
-            0,
-            0,
-            0});
-            this.txtGheTrong.Name = "txtGheTrong";
-            this.txtGheTrong.Size = new System.Drawing.Size(99, 20);
-            this.txtGheTrong.TabIndex = 19;
-            // 
-            // txtMaVe
-            // 
-            this.txtMaVe.Location = new System.Drawing.Point(75, 19);
-            this.txtMaVe.Name = "txtMaVe";
-            this.txtMaVe.Size = new System.Drawing.Size(99, 20);
-            this.txtMaVe.TabIndex = 20;
-            // 
-            // txtDiemDon
-            // 
-            this.txtDiemDon.Location = new System.Drawing.Point(254, 58);
-            this.txtDiemDon.Name = "txtDiemDon";
-            this.txtDiemDon.Size = new System.Drawing.Size(114, 20);
-            this.txtDiemDon.TabIndex = 21;
-            // 
-            // txtTenVe
-            // 
-            this.txtTenVe.Location = new System.Drawing.Point(251, 19);
-            this.txtTenVe.Name = "txtTenVe";
-            this.txtTenVe.Size = new System.Drawing.Size(117, 20);
-            this.txtTenVe.TabIndex = 22;
-            // 
-            // txtDiemDen
-            // 
-            this.txtDiemDen.Location = new System.Drawing.Point(437, 58);
-            this.txtDiemDen.Name = "txtDiemDen";
-            this.txtDiemDen.Size = new System.Drawing.Size(101, 20);
-            this.txtDiemDen.TabIndex = 23;
-            // 
-            // txtGiaVe
-            // 
-            this.txtGiaVe.Location = new System.Drawing.Point(437, 19);
-            this.txtGiaVe.Name = "txtGiaVe";
-            this.txtGiaVe.Size = new System.Drawing.Size(101, 20);
-            this.txtGiaVe.TabIndex = 24;
-            // 
             // frmVeXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -427,15 +428,16 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmVeXe";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmVeXe_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGheTrong)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPhut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGio)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvVeXe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vEXEBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhut)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGheTrong)).EndInit();
             this.ResumeLayout(false);
 
         }

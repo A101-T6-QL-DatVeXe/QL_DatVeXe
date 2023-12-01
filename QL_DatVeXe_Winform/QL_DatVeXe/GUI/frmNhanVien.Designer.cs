@@ -34,6 +34,8 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
+            this.txtTrangThai = new System.Windows.Forms.ComboBox();
             this.txtNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtTenNV = new System.Windows.Forms.TextBox();
@@ -58,8 +60,6 @@
             this.nHANVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.xACNHANHOADONBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nHANVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtTrangThai = new System.Windows.Forms.ComboBox();
-            this.txtGioiTinh = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNhanVien)).BeginInit();
@@ -134,6 +134,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chi tiết Nhân viên";
             // 
+            // txtGioiTinh
+            // 
+            this.txtGioiTinh.Enabled = false;
+            this.txtGioiTinh.FormattingEnabled = true;
+            this.txtGioiTinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
+            this.txtGioiTinh.Location = new System.Drawing.Point(247, 21);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.Size = new System.Drawing.Size(72, 21);
+            this.txtGioiTinh.TabIndex = 15;
+            // 
+            // txtTrangThai
+            // 
+            this.txtTrangThai.Enabled = false;
+            this.txtTrangThai.FormattingEnabled = true;
+            this.txtTrangThai.Items.AddRange(new object[] {
+            "Đang làm",
+            "Nghỉ việc"});
+            this.txtTrangThai.Location = new System.Drawing.Point(406, 21);
+            this.txtTrangThai.Name = "txtTrangThai";
+            this.txtTrangThai.Size = new System.Drawing.Size(118, 21);
+            this.txtTrangThai.TabIndex = 14;
+            // 
             // txtNgaySinh
             // 
             this.txtNgaySinh.Enabled = false;
@@ -149,6 +174,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(181, 20);
             this.txtSDT.TabIndex = 13;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtTenNV
             // 
@@ -312,31 +338,6 @@
             // nHANVIENBindingSource
             // 
             this.nHANVIENBindingSource.DataSource = typeof(BLL_DAL.NHANVIEN);
-            // 
-            // txtTrangThai
-            // 
-            this.txtTrangThai.Enabled = false;
-            this.txtTrangThai.FormattingEnabled = true;
-            this.txtTrangThai.Items.AddRange(new object[] {
-            "Đang làm",
-            "Nghỉ việc"});
-            this.txtTrangThai.Location = new System.Drawing.Point(406, 21);
-            this.txtTrangThai.Name = "txtTrangThai";
-            this.txtTrangThai.Size = new System.Drawing.Size(118, 21);
-            this.txtTrangThai.TabIndex = 14;
-            // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.Enabled = false;
-            this.txtGioiTinh.FormattingEnabled = true;
-            this.txtGioiTinh.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ",
-            "Khác"});
-            this.txtGioiTinh.Location = new System.Drawing.Point(247, 21);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.Size = new System.Drawing.Size(72, 21);
-            this.txtGioiTinh.TabIndex = 15;
             // 
             // frmNhanVien
             // 

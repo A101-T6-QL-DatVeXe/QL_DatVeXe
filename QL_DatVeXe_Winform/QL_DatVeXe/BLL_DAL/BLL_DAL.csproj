@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HoaDon_BLL_DAL.cs" />
     <Compile Include="Login_BLL_DAL.cs" />
     <Compile Include="NhanVien_BLL_DAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

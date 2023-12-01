@@ -31,9 +31,10 @@ namespace GUI
             String username = txtUserName.Text;
             String password = txtPassWord.Text;
 
-            if(login.checkUserLogin(username, password) != null)
+            TAIKHOANNV taiKhoan = login.checkUserLogin(username, password);
+            if (taiKhoan != null)
             {
-                frmMain formMain = new frmMain(user);
+                frmMain formMain = new frmMain(taiKhoan);
 
                 this.Hide();
                 formMain.ShowDialog();

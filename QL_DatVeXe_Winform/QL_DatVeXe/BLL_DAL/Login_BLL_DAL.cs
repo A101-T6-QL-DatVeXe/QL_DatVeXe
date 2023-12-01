@@ -20,6 +20,7 @@ namespace BLL_DAL
             TAIKHOANNV taiKhoan = db.TAIKHOANNVs.Where(tk => tk.TAIKHOAN == userNV && tk.MATKHAU == passNV).FirstOrDefault();
             if (taiKhoan != null)
                 return taiKhoan;
+
             else
                 return null;
         }

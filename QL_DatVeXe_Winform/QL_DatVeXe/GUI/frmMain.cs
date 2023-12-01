@@ -13,23 +13,51 @@ namespace GUI
 {
     public partial class frmMain : Form
     {
-        private bool isAdmin;
-        private int idNV;
-
-        NhanVien_BLL_DAL nhanVien = new NhanVien_BLL_DAL();
-
         public frmMain(TAIKHOANNV taiKhoan)
         {
             InitializeComponent();
 
-            NHANVIEN nv = nhanVien.getDataOneNhanVien((int)taiKhoan.MANV);
-            nguoiDungToolStripMenuItem.Text = nv.TENNV;
-            //isAdmin = taiKhoan.QUYEN;
-
-            if (!isAdmin)
+            //NHANVIEN nv = nhanVien.getDataOneNhanVien((int)taiKhoan.MANV);
+            nguoiDungToolStripMenuItem.Text = taiKhoan.TAIKHOAN;
+            if (taiKhoan.QUYEN != "Quản lí")
             {
                 nhânViênToolStripMenuItem.Visible = false;
             }
+        }
+
+        private void nguoiDungToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void véXeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVeXe f = new frmVeXe();
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            panelControl.Controls.Add(f);
+            f.Show();
+        }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmNhanVien f = new frmNhanVien();
+            f.FormBorderStyle = FormBorderStyle.None;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            panelControl.Controls.Add(f);
+            f.Show();
+        }
+
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
