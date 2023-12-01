@@ -235,5 +235,3 @@ VALUES  (N'tantruong', N'123456', 1, N'Quản lí'),
 		(N'nguyenbao', N'123456', 2, N'Nhân viên'),
 		(N'quanghau', N'123456', 3, N'Nhân viên');
 
-
-

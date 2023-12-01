@@ -73,4 +73,3 @@ C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_D
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csproj.CopyComplete
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.dll
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.pdb
-C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe\obj\Debug\QL_DatVeXe.csprojAssemblyReference.cache
