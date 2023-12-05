@@ -124,6 +124,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\VeXeController.cs" />
+    <Compile Include="Controllers\YeuThichController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -264,9 +265,6 @@
     <Content Include="Content\images\trend_6.png" />
     <Content Include="Content\images\trend_7.png" />
     <Content Include="Content\images\trend_8.png" />
-    <Content Include="Content\js\about_custom.js" />
-    <Content Include="Content\js\blog_custom.js" />
-    <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\elements_custom.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
@@ -299,17 +297,9 @@
     <Content Include="Content\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Content\plugins\progressbar\progressbar.min.js" />
     <Content Include="Content\plugins\scrollmagic\ScrollMagic.min.js" />
-    <Content Include="Content\styles\about_responsive.css" />
-    <Content Include="Content\styles\about_styles.css" />
-    <Content Include="Content\styles\blog_responsive.css" />
-    <Content Include="Content\styles\blog_styles.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Content\styles\bootstrap4\popper.js" />
-    <Content Include="Content\styles\contact_responsive.css" />
-    <Content Include="Content\styles\contact_styles.css" />
-    <Content Include="Content\styles\elements_responsive.css" />
-    <Content Include="Content\styles\elements_styles.css" />
     <Content Include="Content\styles\main_styles.css" />
     <Content Include="Content\styles\offers_responsive.css" />
     <Content Include="Content\styles\offers_styles.css" />
@@ -494,6 +484,8 @@
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\VeXe\TimVe.cshtml" />
     <Content Include="Views\VeXe\XemChiTietVeXe.cshtml" />
+    <Content Include="Views\YeuThich\VeXeYeuThich.cshtml" />
+    <Content Include="Views\YeuThich\YeuThichRong.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

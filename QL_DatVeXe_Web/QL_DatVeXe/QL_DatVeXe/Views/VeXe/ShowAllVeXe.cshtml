@@ -104,7 +104,20 @@
                                             <li class="offers_icons_item"><img src="~/Content/images/sailboat.png" alt=""></li>
                                         </ul>
                                     </div>
+
                                     <div class="button book_button"><a href="#">book<span></span><span></span><span></span></a></div>
+                                    <div class="thatim">
+                                        <a href="@Url.Action("ThemSanPhamYeuThich", "YeuThich", new { mave = item.MAVE })">
+                                            @if (item.YEUTHICH == false)
+                                            {
+                                                <i class="fa fa-heart-o" style="color:#fe0083"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-heart" style="color:#fe0083"></i>
+                                            }
+                                        </a>
+                                    </div>
                                     <div class="offer_reviews">
                                         <div class="offer_reviews_content">
                                             @if ((item.SOSAO * 2) >= 8 && (item.SOSAO * 2) <= 10)

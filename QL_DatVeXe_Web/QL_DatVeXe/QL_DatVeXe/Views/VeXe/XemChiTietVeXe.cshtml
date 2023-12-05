@@ -35,6 +35,18 @@
                         <div class="hotel_title_button ml-lg-auto text-lg-right" style="margin-top:20px;">
                             <div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
                         </div>
+                        <div class="thatimchitiet">
+                            <a href="@Url.Action("ThemSanPhamYeuThich", "YeuThich", new { mave = Model.VeXe.MAVE })">
+                                @if (Model.VeXe.YEUTHICH == false)
+                                {
+                                    <i class="fa fa-heart-o" style="color:#fe0083"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa fa-heart" style="color:#fe0083"></i>
+                                }
+                            </a>
+                        </div>
                     </div>
                     <!-- Listing Image -->
                     <div class="hotel_image">
