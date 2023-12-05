@@ -29,13 +29,13 @@ GO
 CREATE TABLE KHACHHANG (
     MAKH INT IDENTITY(1,1) PRIMARY KEY,
 	TENKH  NVARCHAR(50) NOT NULL,
-	NGAYSINH DATE NOT NULL,
-	GIOITINH NVARCHAR(5) NOT NULL,
-	DIACHI NVARCHAR(50) NOT NULL,
-	SDT VARCHAR(11) NOT NULL,
-	TAIKHOAN VARCHAR(50) NOT NULL UNIQUE,
-	MATKHAU VARCHAR(50) NOT NULL,
-	EMAIL VARCHAR(50) NOT NULL,
+	NGAYSINH DATE,
+	GIOITINH NVARCHAR(5),
+	DIACHI NVARCHAR(50),
+	SDT VARCHAR(10) NOT NULL,
+	TAIKHOAN VARCHAR(50) UNIQUE,
+	MATKHAU VARCHAR(50),
+	EMAIL VARCHAR(50),
 	TRANGTHAI NVARCHAR(50) DEFAULT N'Không khóa' -- TRẠNG THÁI KHÔNG KHÓA VÀ KHÓA
 );
 
@@ -53,6 +53,7 @@ CREATE TABLE VEXE (
 	THOIGIANDON NVARCHAR(50) NOT NULL,
     SOSAO INT,
 	LUOTDANHGIA INT,
+	YEUTHICH BIT DEFAULT 0, -- 0 Là vé xe chưa được yêu thích, 1 là vé xe được yêu thích,
 	MOTA NVARCHAR(MAX) NOT NULL,
 	HINHANH VARCHAR(50),
 );
@@ -64,7 +65,15 @@ CREATE TABLE HOADON (
     MAKH INT NOT NULL,
     NGAYLAP DATETIME,
     THANHTIEN INT,
-    TRANGTHAI bit DEFAULT 0, -- 0 Là hóa đơn chưa xác nhận, 1 là hóa được đã được xác nhận
+	SOHOADON INT NOT NULL,
+	TENNGUOIDAT NVARCHAR(255) NOT NULL,  
+	DIACHI NVARCHAR(255), 
+    SDT NVARCHAR(10) NOT NULL,
+    EMAIL NVARCHAR(255),
+	SOGHE INT Not NULL,
+	MAKHUYENMAI NVarChar(50) ,
+	GHICHU NVARCHAR(255),
+    TRANGTHAI bit DEFAULT 0, -- 0 Là hóa đơn chưa xác nhận, 1 là hóa được đã được xác nhận,
 	FOREIGN KEY (MAKH) REFERENCES KHACHHANG(MAKH)
 );
 
@@ -73,7 +82,7 @@ GO
 CREATE TABLE CHITIETHOADON (
     MAHD INT NOT NULL,
     MAVE INT NOT NULL,
-    SOLUONG INT NOT NULL,
+    SOGHE INT NOT NULL,
 	PRIMARY KEY (MAHD, MAVE),
 	FOREIGN KEY (MAHD) REFERENCES HOADON(MAHD),
 	FOREIGN KEY (MAVE) REFERENCES VEXE(MAVE)
@@ -94,12 +103,11 @@ CREATE TABLE DANHGIA (
     FOREIGN KEY (MAVE) REFERENCES VEXE(MAVE)
 );
 
--- Bảng vé xe trong giỏ hàng
+-- Bảng vé xe yêu thích
 GO
-CREATE TABLE VEXETRONGGIOHANG (
+CREATE TABLE VEXEYEUTHICH (
     MAVE INT NOT NULL,
     MAKH int NOT NULL,
-	SOLUONG INT,
 	PRIMARY KEY (MAVE, MAKH),
 	FOREIGN KEY (MAKH) REFERENCES KHACHHANG(MAKH),
 	FOREIGN KEY (MAVE) REFERENCES VEXE(MAVE)
@@ -171,26 +179,26 @@ END;
 
 GO
 INSERT INTO VEXE
-VALUES (N'Phúc Xuyên',260000,12,N'Quảng Ninh',N'Hà Nội', '2023-12-01', '2023-12-03', N'07 giờ 30 phút',0,0,N'Limousine 12 chỗ','phucxuyen.jpeg'),
-	   (N'Hải Phòng Travel',270000, 11, N'Hà Nội', N'Hải Phòng', '2023-12-01', '2023-12-03', N'08 giờ', 0,0,N'Limousine 12 chỗ','haiphong.jpeg'),
-	   (N'Hạ Long Travel',300000,10, N'Hồ Chí Minh', N'Quảng Ninh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
-	   (N'Duy Khánh Limousine',300000,9, N'Đà Nẵng', N'Hội An', '2023-12-01', '2023-12-02', N'14 giờ 30 phút', 0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
-	   (N'Daiichi Travel',200000,45, N'Quảng Ninh', N'Ninh Bình', '2023-12-02', '2023-12-04', N'08 giờ', 0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
-	   (N'Hải Âu',130000,29, N'Hà Nội', N'Hải Phòng', '2023-12-03', '2023-12-05', N'09 giờ 30 phút', 0,0,N'Ghế Ngồi 29 Chỗ', 'haiau.jpeg'),
-	   (N'Thuận Thảo',280000,40, N'Hồ Chí Minh', N'Phú Yên', '2023-12-01', '2023-12-03', N'08 giờ',0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
-	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Ninh Bình', N'Đà Lạt', '2023-12-02', '2023-12-04', N'09 giờ 30 phút',0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
-	   (N'Huỳnh Gia',280000, 38, N'Hồ Chí Minh', N'Nha Trang', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,N'Giường nằm 38 chỗ (WC)','huynhgia.jpeg'),
-	   (N'Phương Nam',250000,40, N'Hồ Chí Minh', N'Vũng Tàu', '2023-12-01', '2023-12-04', N'07 giờ',0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg'),
-	   (N'Phúc Xuyên',260000,11,N'Hà Nội',N'Quảng Ninh', '2023-12-04', '2023-12-06', N'07 giờ 30 phút',0,0,N'Limousine 11 chỗ','phucxuyen.jpeg'),
-	   (N'Hải Phòng Travel',270000, 11, N'Hải Phòng', N'Hà Nội', '2023-12-05', '2023-12-07', N'08 giờ', 0,0,N'Limousine 11 chỗ','haiphong.jpeg'),
-	   (N'Hạ Long Travel',310000,10, N'Quảng Ninh', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
-	   (N'Duy Khánh Limousine',300000,9, N'Hội An', N'Đà Nẵng', '2023-12-02', '2023-12-05', N'13 giờ 30 phút', 0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
-	   (N'Daiichi Travel',200000,45, N'Ninh Bình', N'Quảng Ninh', '2023-12-06', '2023-12-08', N'08 giờ', 0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
-	   (N'Hải Âu',130000,25, N'Hải Phòng', N'Hà Nội', '2023-12-03', '2023-12-05', N'15 giờ 20 phút', 0,0,N'Ghế Ngồi 25 Chỗ', 'haiau.jpeg'),
-	   (N'Thuận Thảo',280000,40, N'Phú Yên', N'Hồ Chí Minh', '2023-12-07', '2023-12-09', N'08 giờ',0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
-	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Đà Lạt', N'Ninh Bình', '2023-12-05', '2023-12-08', N'09 giờ 30 phút',0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
-	   (N'Huỳnh Gia',280000, 36, N'Nha Trang', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,N'Giường nằm 36 chỗ (WC)','huynhgia.jpeg'),
-	   (N'Phương Nam',250000,40, N'Vũng Tàu', N'Hồ Chí Minh', '2023-12-08', '2023-12-10', N'07 giờ',0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg');
+VALUES (N'Phúc Xuyên',260000,12,N'Quảng Ninh',N'Hà Nội', '2023-12-01', '2023-12-03', N'07 giờ 30 phút',0,0,0,N'Limousine 12 chỗ','phucxuyen.jpeg'),
+	   (N'Hải Phòng Travel',270000, 11, N'Hà Nội', N'Hải Phòng', '2023-12-01', '2023-12-03', N'08 giờ', 0,0,0,N'Limousine 12 chỗ','haiphong.jpeg'),
+	   (N'Hạ Long Travel',300000,10, N'Hồ Chí Minh', N'Quảng Ninh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
+	   (N'Duy Khánh Limousine',300000,9, N'Đà Nẵng', N'Hội An', '2023-12-01', '2023-12-02', N'14 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
+	   (N'Daiichi Travel',200000,45, N'Quảng Ninh', N'Ninh Bình', '2023-12-02', '2023-12-04', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
+	   (N'Hải Âu',130000,29, N'Hà Nội', N'Hải Phòng', '2023-12-03', '2023-12-05', N'09 giờ 30 phút', 0,0,0,N'Ghế Ngồi 29 Chỗ', 'haiau.jpeg'),
+	   (N'Thuận Thảo',280000,40, N'Hồ Chí Minh', N'Phú Yên', '2023-12-01', '2023-12-03', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
+	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Ninh Bình', N'Đà Lạt', '2023-12-02', '2023-12-04', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
+	   (N'Huỳnh Gia',280000, 38, N'Hồ Chí Minh', N'Nha Trang', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,0,N'Giường nằm 38 chỗ (WC)','huynhgia.jpeg'),
+	   (N'Phương Nam',250000,40, N'Hồ Chí Minh', N'Vũng Tàu', '2023-12-01', '2023-12-04', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg'),
+	   (N'Phúc Xuyên',260000,11,N'Hà Nội',N'Quảng Ninh', '2023-12-04', '2023-12-06', N'07 giờ 30 phút',0,0,0,N'Limousine 11 chỗ','phucxuyen.jpeg'),
+	   (N'Hải Phòng Travel',270000, 11, N'Hải Phòng', N'Hà Nội', '2023-12-05', '2023-12-07', N'08 giờ', 0,0,0,N'Limousine 11 chỗ','haiphong.jpeg'),
+	   (N'Hạ Long Travel',310000,10, N'Quảng Ninh', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
+	   (N'Duy Khánh Limousine',300000,9, N'Hội An', N'Đà Nẵng', '2023-12-02', '2023-12-05', N'13 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
+	   (N'Daiichi Travel',200000,45, N'Ninh Bình', N'Quảng Ninh', '2023-12-06', '2023-12-08', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
+	   (N'Hải Âu',130000,25, N'Hải Phòng', N'Hà Nội', '2023-12-03', '2023-12-05', N'15 giờ 20 phút', 0,0,0,N'Ghế Ngồi 25 Chỗ', 'haiau.jpeg'),
+	   (N'Thuận Thảo',280000,40, N'Phú Yên', N'Hồ Chí Minh', '2023-12-07', '2023-12-09', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
+	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Đà Lạt', N'Ninh Bình', '2023-12-05', '2023-12-08', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
+	   (N'Huỳnh Gia',280000, 36, N'Nha Trang', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,0,N'Giường nằm 36 chỗ (WC)','huynhgia.jpeg'),
+	   (N'Phương Nam',250000,40, N'Vũng Tàu', N'Hồ Chí Minh', '2023-12-08', '2023-12-10', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg');
 
 INSERT INTO KhachHang (TENKH, NGAYSINH, GIOITINH, DIACHI, SDT, TAIKHOAN, MATKHAU, EMAIL, TRANGTHAI)
 VALUES  (N'Nguyễn Văn Tuấn','1985-09-30', N'Nam', N'TP. Hồ Chí Minh', N'0946777364', N'tuan12', N'123', N'tuan12@gmail.com', N'Không khoá'),
