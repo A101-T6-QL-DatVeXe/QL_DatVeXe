@@ -1153,7 +1153,7 @@ section
     padding-left:10px;
 }
 .sos {
-    padding-left: 168px;
+    padding-left: 180px;
     position: relative;
     top: -15px;
     color: black;
@@ -1309,11 +1309,13 @@ section
 }
 .offers_price
 {
+    position:relative;
 	display: inline-block;
 	font-size: 36px;
 	font-weight: 700;
 	color: #fa9e1b;
 	line-height: 25px;
+    left:-10px;
 }
 .offers_price span
 {
@@ -1948,6 +1950,8 @@ p.checkout-coupon input[type="submit"]:hover {
 }
 .checkout-form-list input[type="text"],
 .checkout-form-list input[type="password"],
+.checkout-form-list input[type="tel"],
+.checkout-form-list input[type="number"],
 .checkout-form-list input[type="email"] {
 	background: #fff none repeat scroll 0 0;
 	border: 1px solid #e5e5e5;

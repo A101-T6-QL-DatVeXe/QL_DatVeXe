@@ -398,5 +398,13 @@ $(document).ready(function()
 				}
 			});	
 		}
-	}
+    }
+
+    $('#showcoupon').on('click', function () {
+        $('#checkout_coupon').slideToggle(900);
+    });
+
+    $('#thongtin-user').on('click', function () {
+        $('#userOptions').slideToggle(900);
+    });
 });

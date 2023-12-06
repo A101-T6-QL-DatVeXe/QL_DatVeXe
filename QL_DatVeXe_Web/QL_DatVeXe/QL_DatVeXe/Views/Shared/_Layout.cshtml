@@ -43,11 +43,18 @@
                             @{
                                 var user = Session["user"] as string;
                             }
+
                             @if (!string.IsNullOrEmpty(user))
                             {
-                                <div class="user">
-                                    Xin chào @user
+                                <div class="welcome user-info" id="thongtin-user">
+                                    Xin chào <p class="user">@user</p>
                                 </div>
+
+                                <ul class="user-options" id="userOptions">
+                                    <li><a href="#"><img class="pr-2" src="~/Content/images/profile.png" alt="" width="30" height="25">Thông tin cá nhân</a></li>
+                                    <li><a href="/HoaDon/HoaDonChoXacNhan"><img class="pr-2" src="~/Content/images/donhang.png" alt="" width="30" height="25">Đơn hàng chờ xác nhận</a></li>
+                                    <li><a href="/NguoiDung/DangXuat"><img class="pr-2" src="~/Content/images/exit.png" alt="" width="30" height="25">Đăng xuất</a></li>
+                                </ul>
                             }
 
                             <div class="user_box ml-auto">
@@ -1552,7 +1559,7 @@
                                         <div>Ngày về</div>
                                         <input type="date" name="ngayve" class="check_out search_input" placeholder="YYYY-MM-DD">
                                     </div>
-                                    <button class="button search_button" type="submit">search<span></span><span></span><span></span></button>
+                                    <button class="button search_button" type="submit" style="position:relative; bottom:13px">search<span></span><span></span><span></span></button>
                                 </form>
                             </div>
                         </div>

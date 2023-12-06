@@ -38,8 +38,8 @@ namespace QL_DatVeXe.Controllers
             {
                 var kh = db.KHACHHANGs.SingleOrDefault(t => t.TENKH == user);
                 var veyeuthich = db.VEXEYEUTHICHes.Where(t => t.MAKH == kh.MAKH).ToList();
-                
-                if(veyeuthich.Count > 0)
+
+                if (veyeuthich.Count > 0)
                 {
                     for (int i = 0; i < setve.Count; i++)
                     {
@@ -239,6 +239,123 @@ namespace QL_DatVeXe.Controllers
                 Session["TB"] = "Bạn đã đánh giá vé xe này";
             db.SubmitChanges();
             return RedirectToAction("XemChiTietVeXe", "VeXe", new { mave = maVe, diemden = diemDen });
+        }
+
+        public ActionResult DatVe(int mave)
+        {
+            var user = Session["user"] as string;
+            if (string.IsNullOrEmpty(user))
+                return RedirectToAction("DangNhap", "NguoiDung");
+
+            var gg = Session["giamgia"] as string;
+            if (string.IsNullOrEmpty(gg))
+                Session["giamgia"] = 0;
+
+            var vexe = db.VEXEs.SingleOrDefault(t => t.MAVE.Equals(mave));
+            var kh = db.KHACHHANGs.SingleOrDefault(k => k.TENKH.Equals(user));
+
+            var giamgia = Convert.ToInt32(Session["giamgia"]);
+            var tongtien = vexe.GIAVE - giamgia;
+            Session["tongcong"] = tongtien;
+
+            User_DatHang user_DatHang = new User_DatHang
+            {
+                VeXe = vexe,
+                KhachHang = kh
+            };
+            return View(user_DatHang);
+        }
+
+        public ActionResult ThongBaoDatVe()
+        {
+            return View();
+        }
+
+        public ActionResult XacNhanDatVe(HOADON hd, CHITIETHOADON cthd, int mave, string ten, string diachi, string sdt, string ghe, string email, string ghichu)
+        {
+            var user = Session["user"] as string;
+            if (string.IsNullOrEmpty(user))
+                Session["user"] = string.Empty;
+
+            var gg = Session["giamgia"] as string;
+            if (string.IsNullOrEmpty(gg))
+                Session["giamgia"] = 0;
+
+            var magiamgia = Session["magiamgia"] as string;
+            if (string.IsNullOrEmpty(gg))
+            {
+                Session["magiamgia"] = "Không có mã giảm giá";
+                magiamgia = Session["magiamgia"] as string;
+            }
+
+            var giamgia = Convert.ToInt32(Session["giamgia"]);
+
+            var kh = db.KHACHHANGs.SingleOrDefault(k => k.TENKH.Equals(user));
+            var hoadon = db.HOADONs.Where(t => t.KHACHHANG.TENKH == user).ToList();
+            var vexe = db.VEXEs.SingleOrDefault(t => t.MAVE == mave);
+
+            var sohoadon = 1;
+
+            if (hoadon.Count == 0)
+            {
+                hd.MAKH = kh.MAKH;
+                hd.NGAYLAP = DateTime.Now;
+                hd.SOHOADON = 1;
+                hd.TENNGUOIDAT = ten;
+                hd.DIACHI = diachi;
+                hd.SDT = sdt;
+                hd.EMAIL = email;
+                hd.SOGHE = Convert.ToInt32(ghe);
+                hd.THANHTIEN = vexe.GIAVE * Convert.ToInt32(ghe);
+                hd.MAKHUYENMAI = magiamgia;
+                hd.GHICHU = ghichu;
+                hd.TRANGTHAI = false;
+                db.HOADONs.InsertOnSubmit(hd);
+                db.SubmitChanges();
+            }
+            else
+            {
+                var n = hoadon.Count;
+                for (int i = 0; i < n; i++)
+                {
+                    if (hoadon[i].SOHOADON == sohoadon)
+                    {
+                        sohoadon = hoadon[i].SOHOADON + 1;
+                    }
+                    sohoadon = hoadon[i].SOHOADON + 1;
+                }
+                hd.MAKH = kh.MAKH;
+                hd.NGAYLAP = DateTime.Now;
+                hd.SOHOADON = sohoadon;
+                hd.TENNGUOIDAT = ten;
+                hd.DIACHI = diachi;
+                hd.SDT = sdt;
+                hd.EMAIL = email;
+                hd.SOGHE = Convert.ToInt32(ghe);
+                hd.THANHTIEN = vexe.GIAVE * Convert.ToInt32(ghe);
+                hd.MAKHUYENMAI = magiamgia;
+                hd.GHICHU = ghichu;
+                hd.TRANGTHAI = false;
+                db.HOADONs.InsertOnSubmit(hd);
+                db.SubmitChanges();
+            }
+            var hoadon2 = db.HOADONs.SingleOrDefault(t => t.KHACHHANG.TENKH == user && t.SOHOADON == sohoadon);
+
+            if (hoadon2 != null)
+            {
+                cthd.MAHD = hoadon2.MAHD;
+                cthd.MAVE = mave;
+                cthd.SOGHE = Convert.ToInt32(ghe);
+                Session["thongbao"] = "Bạn đã đặt vé thành công!";
+                db.CHITIETHOADONs.InsertOnSubmit(cthd);
+                db.SubmitChanges();
+            }
+            else
+            {
+                Session["thongbao"] = "Đặt vé thất bại!";
+            }
+            db.SubmitChanges();
+            return RedirectToAction("ThongBaoDatVe", "VeXe");
         }
     }
 }
