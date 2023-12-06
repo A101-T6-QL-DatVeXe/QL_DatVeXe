@@ -30,7 +30,7 @@ namespace QL_DatVeXe.Controllers
             return View();
         }
 
-        public ActionResult ThemSanPhamYeuThich(VEXEYEUTHICH spyt, int mave)
+        public ActionResult ThemVeXeYeuThich(VEXEYEUTHICH spyt, int mave)
         {
             var user = Session["user"] as string;
             if (string.IsNullOrEmpty(user))
@@ -52,7 +52,7 @@ namespace QL_DatVeXe.Controllers
             return RedirectToAction("VeXeYeuThich", "YeuThich");
         }
 
-        public ActionResult XoaSanPhamYeuThich(int mave)
+        public ActionResult XoaVeXeYeuThich(int mave)
         {
             var user = Session["user"] as string;
 

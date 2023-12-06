@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HoaDonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\VeXeController.cs" />
@@ -128,11 +129,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChoXacNhan.cs" />
     <Compile Include="Models\QL_DATVEXE.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QL_DATVEXE.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\User_DatHang.cs" />
     <Compile Include="Models\VeXeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -486,9 +489,13 @@
     <Content Include="Views\VeXe\XemChiTietVeXe.cshtml" />
     <Content Include="Views\YeuThich\VeXeYeuThich.cshtml" />
     <Content Include="Views\YeuThich\YeuThichRong.cshtml" />
+    <Content Include="Views\VeXe\DatVe.cshtml" />
+    <Content Include="Views\VeXe\ThongBaoDatVe.cshtml" />
+    <Content Include="Views\HoaDon\HoaDonChoXacNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DatHang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

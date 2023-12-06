@@ -26,10 +26,10 @@
                                 @foreach (var item in Model)
                                 {
                                     <tr>
-                                        <td class="li-product-remove"><a href="@Url.Action("XoaSanPhamYeuThich", "YeuThich", new {mave = item.MAVE})"><i class="fa fa-times"></i></a></td>
+                                        <td class="li-product-remove"><a href="@Url.Action("XoaVeXeYeuThich", "YeuThich", new {mave = item.MAVE})"><i class="fa fa-times"></i></a></td>
                                         <td class="li-product-thumbnail"><a href="@Url.Action("XemChiTietVeXe", "VeXe", new {mave = item.MAVE, diemden = item.VEXE.DIEMDEN})"><img src="~/Content/images/@item.VEXE.HINHANH" alt="" width="150" height="150"></a></td>
                                         <td class="li-product-name"><a style="color:black" href="@Url.Action("XemChiTietVeXe", "VeXe", new {mave = item.MAVE, diemden = item.VEXE.DIEMDEN})">@item.VEXE.DIEMDON - @item.VEXE.DIEMDEN</a></td>
-                                        <td class="li-product-price" style="color:black"><span class="amount">@item.VEXE.GIAVE&ETH</span></td>
+                                        <td class="li-product-price" style="color:black"><span class="amount">@string.Format("{0:N0}", item.VEXE.GIAVE)&ETH;</span></td>
                                         @if (item.VEXE.CONTRONG > 0)
                                         {
                                             <td class="li-product-stock-status"><span class="in-stock">@item.VEXE.CONTRONG</span></td>
@@ -39,7 +39,7 @@
                                             <td class="li-product-stock-status"><span class="out-stock">@item.VEXE.CONTRONG</span></td>
 
                                         }
-                                        <td class="li-product-add-cart"><a href="@Url.Action("ThemSanPhamVaoGio", "GioHang", new {mave = item.MAVE})">Đặt Vé</a></td>
+                                        <td class="li-product-add-cart"><a href="@Url.Action("DatVe", "VeXe", new { mave = item.VEXE.MAVE })">Đặt Vé</a></td>
                                     </tr>
                                 }
                             </tbody>
