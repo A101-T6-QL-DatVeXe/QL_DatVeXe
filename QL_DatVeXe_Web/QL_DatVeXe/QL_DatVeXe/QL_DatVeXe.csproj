@@ -492,6 +492,7 @@
     <Content Include="Views\VeXe\DatVe.cshtml" />
     <Content Include="Views\VeXe\ThongBaoDatVe.cshtml" />
     <Content Include="Views\HoaDon\HoaDonChoXacNhan.cshtml" />
+    <Content Include="Views\HoaDon\HoaDonDaXacNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

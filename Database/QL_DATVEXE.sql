@@ -1,4 +1,4 @@
-﻿﻿CREATE DATABASE QL_DATVEXE
+CREATE DATABASE QL_DATVEXE
 GO
 USE QL_DATVEXE
 
@@ -134,7 +134,7 @@ CREATE TABLE TINTUC (
     HINHANH VARCHAR(50)
 );
 
--- Tạo trigger để cập nhật số sao của vé xe khi có lượt đánh giá mới
+-- Trigger để cập nhật số sao của vé xe khi có lượt đánh giá mới
 GO
 CREATE TRIGGER UpdateRating
 ON DANHGIA
@@ -156,7 +156,7 @@ BEGIN
     JOIN inserted ON VEXE.MAVE = inserted.MAVE;
 END;
 
--- Tạo trigger để cập nhật lượt đánh giá của vé xe khi có lượt đánh giá mới
+-- Trigger để cập nhật lượt đánh giá của vé xe khi có lượt đánh giá mới
 GO
 CREATE TRIGGER trg_DanhGia_Insert
 ON DANHGIA
@@ -178,28 +178,41 @@ BEGIN
 END;
 
 GO
-INSERT INTO VEXE
-VALUES (N'Phúc Xuyên',260000,12,N'Quảng Ninh',N'Hà Nội', '2023-12-01', '2023-12-03', N'07 giờ 30 phút',0,0,0,N'Limousine 12 chỗ','phucxuyen.jpeg'),
-	   (N'Hải Phòng Travel',270000, 11, N'Hà Nội', N'Hải Phòng', '2023-12-01', '2023-12-03', N'08 giờ', 0,0,0,N'Limousine 12 chỗ','haiphong.jpeg'),
-	   (N'Hạ Long Travel',300000,10, N'Hồ Chí Minh', N'Quảng Ninh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
-	   (N'Duy Khánh Limousine',300000,9, N'Đà Nẵng', N'Hội An', '2023-12-01', '2023-12-02', N'14 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
-	   (N'Daiichi Travel',200000,45, N'Quảng Ninh', N'Ninh Bình', '2023-12-02', '2023-12-04', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
-	   (N'Hải Âu',130000,29, N'Hà Nội', N'Hải Phòng', '2023-12-03', '2023-12-05', N'09 giờ 30 phút', 0,0,0,N'Ghế Ngồi 29 Chỗ', 'haiau.jpeg'),
-	   (N'Thuận Thảo',280000,40, N'Hồ Chí Minh', N'Phú Yên', '2023-12-01', '2023-12-03', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
-	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Ninh Bình', N'Đà Lạt', '2023-12-02', '2023-12-04', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
-	   (N'Huỳnh Gia',280000, 38, N'Hồ Chí Minh', N'Nha Trang', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,0,N'Giường nằm 38 chỗ (WC)','huynhgia.jpeg'),
-	   (N'Phương Nam',250000,40, N'Hồ Chí Minh', N'Vũng Tàu', '2023-12-01', '2023-12-04', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg'),
-	   (N'Phúc Xuyên',260000,11,N'Hà Nội',N'Quảng Ninh', '2023-12-04', '2023-12-06', N'07 giờ 30 phút',0,0,0,N'Limousine 11 chỗ','phucxuyen.jpeg'),
-	   (N'Hải Phòng Travel',270000, 11, N'Hải Phòng', N'Hà Nội', '2023-12-05', '2023-12-07', N'08 giờ', 0,0,0,N'Limousine 11 chỗ','haiphong.jpeg'),
-	   (N'Hạ Long Travel',310000,10, N'Quảng Ninh', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
-	   (N'Duy Khánh Limousine',300000,9, N'Hội An', N'Đà Nẵng', '2023-12-02', '2023-12-05', N'13 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
-	   (N'Daiichi Travel',200000,45, N'Ninh Bình', N'Quảng Ninh', '2023-12-06', '2023-12-08', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
-	   (N'Hải Âu',130000,25, N'Hải Phòng', N'Hà Nội', '2023-12-03', '2023-12-05', N'15 giờ 20 phút', 0,0,0,N'Ghế Ngồi 25 Chỗ', 'haiau.jpeg'),
-	   (N'Thuận Thảo',280000,40, N'Phú Yên', N'Hồ Chí Minh', '2023-12-07', '2023-12-09', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
-	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Đà Lạt', N'Ninh Bình', '2023-12-05', '2023-12-08', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
-	   (N'Huỳnh Gia',280000, 36, N'Nha Trang', N'Hồ Chí Minh', '2023-12-03', '2023-12-05', N'10 giờ', 0,0,0,N'Giường nằm 36 chỗ (WC)','huynhgia.jpeg'),
-	   (N'Phương Nam',250000,40, N'Vũng Tàu', N'Hồ Chí Minh', '2023-12-08', '2023-12-10', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg');
+INSERT INTO NHANVIEN
+VALUES  (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
+		(N'Nguyễn Nguyên Bảo', '2002-12-21',N'Nam', N'Củ Chi', N'0328467926', N'Đang làm'),
+		(N'Trần Quang Hậu', '2002-12-12',N'Nam', N'Đồng Nai', N'0328467928', N'Đang làm');
 
+GO
+INSERT INTO TAIKHOANNV
+VALUES  (N'tantruong', N'123456', 1, N'Quản lí'),
+		(N'nguyenbao', N'123456', 2, N'Nhân viên'),
+		(N'quanghau', N'123456', 3, N'Nhân viên');
+
+GO
+INSERT INTO VEXE
+VALUES (N'Phúc Xuyên',260000,12, N'Quảng Ninh', N'Hà Nội', '2023-12-08', '2023-12-11', N'07 giờ 30 phút',0,0,0,N'Limousine 12 chỗ','phucxuyen.jpeg'),
+	   (N'Hải Phòng Travel',270000, 11, N'Hà Nội', N'Hải Phòng', '2023-12-09', '2023-12-10', N'08 giờ', 0,0,0,N'Limousine 12 chỗ','haiphong.jpeg'),
+	   (N'Hạ Long Travel',300000,10, N'Hồ Chí Minh', N'Quảng Ninh', '2023-12-10', '2023-12-12', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
+	   (N'Duy Khánh Limousine',300000,9, N'Đà Nẵng', N'Hội An', '2023-12-08', '2023-12-10', N'14 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
+	   (N'Daiichi Travel',200000,0, N'Quảng Ninh', N'Ninh Bình', '2023-12-09', '2023-12-12', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
+	   (N'Hải Âu',130000,29, N'Hà Nội', N'Hải Phòng', '2023-12-11', '2023-12-12', N'09 giờ 30 phút', 0,0,0,N'Ghế Ngồi 29 Chỗ', 'haiau.jpeg'),
+	   (N'Thuận Thảo',280000,40, N'Hồ Chí Minh', N'Phú Yên', '2023-12-12', '2023-12-14', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
+	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Ninh Bình', N'Đà Lạt', '2023-12-11', '2023-12-15', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
+	   (N'Huỳnh Gia',280000, 0, N'Hồ Chí Minh', N'Nha Trang', '2023-12-10', '2023-12-12', N'10 giờ', 0,0,0,N'Giường nằm 38 chỗ (WC)','huynhgia.jpeg'),
+	   (N'Phương Nam',250000,40, N'Hồ Chí Minh', N'Vũng Tàu', '2023-12-08', '2023-12-12', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg'),
+	   (N'Phúc Xuyên',260000,11, N'Hà Nội', N'Quảng Ninh', '2023-12-12', '2023-12-14', N'07 giờ 30 phút',0,0,0,N'Limousine 11 chỗ','phucxuyen.jpeg'),
+	   (N'Hải Phòng Travel',270000, 11, N'Hải Phòng', N'Hà Nội', '2023-12-13', '2023-12-15', N'08 giờ', 0,0,0,N'Limousine 11 chỗ','haiphong.jpeg'),
+	   (N'Hạ Long Travel',310000,10, N'Quảng Ninh', N'Hồ Chí Minh', '2023-12-13', '2023-12-14', N'09 giờ', 0,0,0,N'Limousine 10 chỗ', 'halong.jpeg'),
+	   (N'Duy Khánh Limousine',300000,0, N'Hội An', N'Đà Nẵng', '2023-12-12', '2023-12-15', N'13 giờ 30 phút', 0,0,0,N'Limousine 9 chỗ', 'duykhanh.jpeg'),
+	   (N'Daiichi Travel',200000,45, N'Ninh Bình', N'Quảng Ninh', '2023-12-09', '2023-12-10', N'08 giờ', 0,0,0,N'Sơ đồ 45 chỗ', 'daiichi.jpeg'),
+	   (N'Hải Âu',130000,25, N'Hải Phòng', N'Hà Nội', '2023-12-08', '2023-12-11', N'15 giờ 20 phút', 0,0,0,N'Ghế Ngồi 25 Chỗ', 'haiau.jpeg'),
+	   (N'Thuận Thảo',280000,0, N'Phú Yên', N'Hồ Chí Minh', '2023-12-09', '2023-12-13', N'08 giờ',0,0,0, N'Giường nằm 40 chỗ', 'thuanthao.jpeg'),
+	   (N'Ngọc Hùng Văn Nhân',800000, 46, N'Đà Lạt', N'Ninh Bình', '2023-12-10', '2023-12-12', N'09 giờ 30 phút',0,0,0, N'Giường nằm 46 chỗ','ngochung.jpeg'),
+	   (N'Huỳnh Gia',280000, 36, N'Nha Trang', N'Hồ Chí Minh', '2023-12-11', '2023-12-14', N'10 giờ', 0,0,0,N'Giường nằm 36 chỗ (WC)','huynhgia.jpeg'),
+	   (N'Phương Nam',250000,40, N'Vũng Tàu', N'Hồ Chí Minh', '2023-12-12', '2023-12-15', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg');
+
+GO
 INSERT INTO KhachHang (TENKH, NGAYSINH, GIOITINH, DIACHI, SDT, TAIKHOAN, MATKHAU, EMAIL, TRANGTHAI)
 VALUES  (N'Nguyễn Văn Tuấn','1985-09-30', N'Nam', N'TP. Hồ Chí Minh', N'0946777364', N'tuan12', N'123', N'tuan12@gmail.com', N'Không khoá'),
 		(N'Nguyễn Nguyên Bảo','2002-08-04', N'Nam', N'TP. Hồ Chí Minh', N'0569512477', N'1', N'1', N'040802.nguyenbao@gmail.com', N'Không khoá'),
@@ -208,6 +221,7 @@ VALUES  (N'Nguyễn Văn Tuấn','1985-09-30', N'Nam', N'TP. Hồ Chí Minh', N'
 		(N'Lê Thị Hồng', '1998-12-05', N'Nữ', N'TP. Hồ Chí Minh', N'0942888764', N'user5', N'hongle', N'hongle@gmail.com', N'Không khoá'),
 		(N'Nguyễn Tuấn Tú', '1995-03-20', N'Nam', N'TP. Hồ Chí Minh', N'0124777652', N'user2', N'tu111', N'tu111@gmail.com', N'Không khoá');
 
+GO
 INSERT INTO DANHGIA
 VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui vẻ', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,1, N'Hôm nay tôi thất tình', N'..............', 1, 'review_1.jpg', '2023-12-01 01:24:36.180'),
@@ -231,15 +245,27 @@ VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui ve
 		(6,18, N'', N'', 3, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(1,19, N'', N'', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,20, N'', N'', 5, 'review_1.jpg', '2023-12-01 01:24:36.180');
-GO
-INSERT INTO NHANVIEN
-VALUES  (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
-		(N'Nguyễn Nguyên Bảo', '2002-12-21',N'Nam', N'Củ Chi', N'0328467926', N'Đang làm'),
-		(N'Trần Quang Hậu', '2002-12-12',N'Nam', N'Đồng Nai', N'0328467928', N'Đang làm');
 
 GO
-INSERT INTO TAIKHOANNV
-VALUES  (N'tantruong', N'123456', 1, N'Quản lí'),
-		(N'nguyenbao', N'123456', 2, N'Nhân viên'),
-		(N'quanghau', N'123456', 3, N'Nhân viên');
+INSERT INTO HOADON (MAKH, NGAYLAP, THANHTIEN, SOHOADON, TENNGUOIDAT, DIACHI, SDT, EMAIL, SOGHE, MAKHUYENMAI, GHICHU, TRANGTHAI)
+VALUES  (1, '2023-12-07 02:33:24.527', 260000, 1, N'Nguyễn Văn Tuấn', N'TP. Hồ Chí Minh', '0946777364', 'tuan12@gmail.com', 1, N'Không có mã giảm giá', null, 0),
+		(2, '2023-12-07 02:33:24.527', 270000, 2, N'Nguyễn Nguyên Bảo', N'TP. Hồ Chí Minh', '0569512477', '040802.nguyenbao@gmail.com', 1, N'Không có mã giảm giá', null, 0),
+		(3, '2023-12-07 02:33:24.527', 300000, 3, N'Nguyễn Thị Ánh', N'TP. Hồ Chí Minh', '0278555643', 'anhnguyen@gmail.com', 1, N'Không có mã giảm giá', null, 0),
+		(4, '2023-12-07 02:33:24.527', 300000, 4, N'Trần Thị Quỳnh Như', N'TP. Hồ Chí Minh', '0797444362', 'nhu@gmail.com', 1, N'Không có mã giảm giá', null, 0),
+		(5, '2023-12-07 02:33:24.527', 200000, 5, N'Lê Thị Hồng', N'TP. Hồ Chí Minh', '0942888764', 'hongle@gmail.com', 1, N'Không có mã giảm giá', null, 1),
+		(6, '2023-12-07 02:33:24.527', 130000, 6, N'Nguyễn Tuấn Tú', N'TP. Hồ Chí Minh', '0124777652', 'tu111@gmail.com', 1, N'Không có mã giảm giá', null, 0),
+		(1, '2023-12-07 02:33:24.527', 560000, 7, N'Nguyễn Văn Tuấn', N'TP. Hồ Chí Minh', '0946777364', 'tuan12@gmail.com', 2, N'Không có mã giảm giá', null, 0),
+		(2, '2023-12-07 02:33:24.527', 1600000, 8, N'Nguyễn Nguyên Bảo', N'TP. Hồ Chí Minh', '0569512477', '040802.nguyenbao@gmail.com', 2, N'Không có mã giảm giá', null, 0),
+		(3, '2023-12-07 02:33:24.527', 280000, 9, N'Nguyễn Thị Ánh', N'TP. Hồ Chí Minh', '0278555643', 'anhnguyen@gmail.com', 1, N'Không có mã giảm giá', null, 1);
 
+GO
+INSERT INTO CHITIETHOADON
+VALUES  (1, 1, 1),
+		(2, 2, 1),
+		(3, 3, 1),
+		(4, 4, 1),
+		(5, 5, 1),
+		(6, 6, 1),
+		(7, 7, 2),
+		(8, 8, 2),
+		(9, 9, 1);

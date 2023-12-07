@@ -19,6 +19,37 @@ namespace QL_DatVeXe.Controllers
 
             Session["favorite"] = db.VEXEYEUTHICHes.Where(t => t.KHACHHANG.TENKH == user).Count();
 
+            var setve = db.VEXEs.OrderBy(t => t.TENVE).ToList();
+            if (setve.Count > 0)
+            {
+                for (int i = 0; i < setve.Count; i++)
+                {
+                    setve[i].YEUTHICH = false;
+                    db.SubmitChanges();
+                }
+            }
+
+            if (!string.IsNullOrEmpty(user))
+            {
+                var kh = db.KHACHHANGs.SingleOrDefault(t => t.TENKH == user);
+                var veyeuthich = db.VEXEYEUTHICHes.Where(t => t.MAKH == kh.MAKH).ToList();
+
+                if (veyeuthich.Count > 0)
+                {
+                    for (int i = 0; i < setve.Count; i++)
+                    {
+                        for (int j = 0; j < veyeuthich.Count; j++)
+                        {
+                            if (setve[i].MAVE == veyeuthich[j].MAVE)
+                            {
+                                setve[i].YEUTHICH = true;
+                                db.SubmitChanges();
+                            }
+                        }
+                    }
+                }
+            }
+
             var favorite = db.VEXEYEUTHICHes.Where(t => t.KHACHHANG.TENKH == user).ToList();
             if (favorite.Count == 0)
                 return RedirectToAction("YeuThichRong", "YeuThich");
