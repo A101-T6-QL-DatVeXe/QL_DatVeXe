@@ -673,6 +673,18 @@ section
     background-color: rgba(235, 145, 145, 0.14);
     box-sizing: border-box;
 }
+.hds-2 {
+    margin-left: 275px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    width: 1155px;
+    height: 100%;
+    border: 1px solid rgba(235, 145, 145, 0.14);
+    padding: 20px;
+    padding-left: 40px;
+    background-color: rgba(164, 235, 119, 0.40);
+    box-sizing: border-box;
+}
 .hd
 {
 	margin-bottom: 33px;
