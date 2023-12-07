@@ -20,6 +20,15 @@ namespace BLL_DAL
             return db.VEXEs.Select(vx => vx).ToList<VEXE>();
         }
 
+        public VEXE getDataOneVeXe(int maVX)
+        {
+            VEXE veXe = db.VEXEs.Where(vx => vx.MAVE == maVX).FirstOrDefault();
+            if (veXe != null)
+                return veXe;
+            else
+                return null;
+        }
+
         public bool addNewVeXe(VEXE veXe)
         {
             var kq = from vx in db.VEXEs where vx.MAVE == veXe.MAVE select vx.MAVE;
@@ -61,6 +70,19 @@ namespace BLL_DAL
                 veXe.SOSAO = uVeXe.SOSAO;
                 veXe.LUOTDANHGIA = uVeXe.LUOTDANHGIA;
                 veXe.MOTA = uVeXe.MOTA;
+
+                db.SubmitChanges();
+                return true;
+            }
+            else { return false; }
+        }
+
+        public bool updateSoGheVeXe(int maVe, int soGheDaDat)
+        {
+            VEXE veXe = db.VEXEs.Where(vx => vx.MAVE == maVe).FirstOrDefault();
+            if (veXe != null)
+            {
+                veXe.CONTRONG = veXe.CONTRONG - soGheDaDat;
 
                 db.SubmitChanges();
                 return true;

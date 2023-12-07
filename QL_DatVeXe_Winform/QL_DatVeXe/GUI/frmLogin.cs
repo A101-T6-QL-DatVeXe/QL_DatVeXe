@@ -15,6 +15,7 @@ namespace GUI
     public partial class frmLogin : Form
     {
         Login_BLL_DAL login = new Login_BLL_DAL();
+        NhanVien_BLL_DAL nhanVien_BLL_DAL = new NhanVien_BLL_DAL();
 
         public frmLogin()
         {
@@ -32,13 +33,24 @@ namespace GUI
             String password = txtPassWord.Text;
 
             TAIKHOANNV taiKhoan = login.checkUserLogin(username, password);
+            
             if (taiKhoan != null)
             {
-                frmMain formMain = new frmMain(taiKhoan);
+                NHANVIEN nhanVien = nhanVien_BLL_DAL.getDataOneNhanVien((int)taiKhoan.MANV);
+                if (nhanVien.TrangThai == "Đang làm" )
+                {
+                    frmMain formMain = new frmMain(taiKhoan);
 
-                this.Hide();
-                formMain.ShowDialog();
-                this.Show();
+                    this.Hide();
+                    formMain.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tài khoản bị khóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtUserName.Focus();
+                }
+                
             }
             else
             {

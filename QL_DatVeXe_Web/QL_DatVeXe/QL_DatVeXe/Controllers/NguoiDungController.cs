@@ -9,7 +9,7 @@ namespace QL_DatVeXe.Controllers
 {
     public class NguoiDungController : Controller
     {
-        QL_DATVEXEDataContext db = new QL_DATVEXEDataContext();
+        QL_DatVeXeDataContext db = new QL_DatVeXeDataContext();
         // GET: NguoiDung
         public ActionResult DangKy()
         {

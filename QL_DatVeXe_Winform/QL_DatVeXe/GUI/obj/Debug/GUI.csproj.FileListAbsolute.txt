@@ -10,7 +10,6 @@ D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\GUI.exe.config
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\GUI.exe
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\GUI.pdb
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\BLL_DAL.dll
-D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\BLL_DAL.pdb
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\BLL_DAL.dll.config
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\obj\Debug\GUI.csproj.CopyComplete
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\obj\Debug\GUI.exe
@@ -34,3 +33,7 @@ D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Xtra
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Pdf.v23.1.Core.xml
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
 D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\obj\Debug\GUI.frmLogin.resources
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.XtraBars.v23.1.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\DevExpress.XtraBars.v23.1.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\bin\Debug\BLL_DAL.pdb
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Winform\QL_DatVeXe\GUI\obj\Debug\GUI.frmThongTin.resources

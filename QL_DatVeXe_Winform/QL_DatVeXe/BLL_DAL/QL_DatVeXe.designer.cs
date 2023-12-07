@@ -57,13 +57,13 @@ namespace BLL_DAL
     partial void InsertVEXE(VEXE instance);
     partial void UpdateVEXE(VEXE instance);
     partial void DeleteVEXE(VEXE instance);
-    partial void InsertVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
-    partial void UpdateVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
-    partial void DeleteVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
+    partial void InsertVEXEYEUTHICH(VEXEYEUTHICH instance);
+    partial void UpdateVEXEYEUTHICH(VEXEYEUTHICH instance);
+    partial void DeleteVEXEYEUTHICH(VEXEYEUTHICH instance);
     #endregion
 		
 		public QL_DatVeXeDataContext() : 
-				base(global::BLL_DAL.Properties.Settings.Default.QL_DATVEXEConnectionString, mappingSource)
+				base(global::BLL_DAL.Properties.Settings.Default.QL_DATVEXEConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -164,11 +164,11 @@ namespace BLL_DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
+		public System.Data.Linq.Table<VEXEYEUTHICH> VEXEYEUTHICHes
 		{
 			get
 			{
-				return this.GetTable<VEXETRONGGIOHANG>();
+				return this.GetTable<VEXEYEUTHICH>();
 			}
 		}
 	}
@@ -183,7 +183,7 @@ namespace BLL_DAL
 		
 		private int _MAVE;
 		
-		private int _SOLUONG;
+		private int _SOGHE;
 		
 		private EntityRef<HOADON> _HOADON;
 		
@@ -197,8 +197,8 @@ namespace BLL_DAL
     partial void OnMAHDChanged();
     partial void OnMAVEChanging(int value);
     partial void OnMAVEChanged();
-    partial void OnSOLUONGChanging(int value);
-    partial void OnSOLUONGChanged();
+    partial void OnSOGHEChanging(int value);
+    partial void OnSOGHEChanged();
     #endregion
 		
 		public CHITIETHOADON()
@@ -256,22 +256,22 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="Int NOT NULL")]
-		public int SOLUONG
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOGHE", DbType="Int NOT NULL")]
+		public int SOGHE
 		{
 			get
 			{
-				return this._SOLUONG;
+				return this._SOGHE;
 			}
 			set
 			{
-				if ((this._SOLUONG != value))
+				if ((this._SOGHE != value))
 				{
-					this.OnSOLUONGChanging(value);
+					this.OnSOGHEChanging(value);
 					this.SendPropertyChanging();
-					this._SOLUONG = value;
-					this.SendPropertyChanged("SOLUONG");
-					this.OnSOLUONGChanged();
+					this._SOGHE = value;
+					this.SendPropertyChanged("SOGHE");
+					this.OnSOGHEChanged();
 				}
 			}
 		}
@@ -859,6 +859,22 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _THANHTIEN;
 		
+		private int _SOHOADON;
+		
+		private string _TENNGUOIDAT;
+		
+		private string _DIACHI;
+		
+		private string _SDT;
+		
+		private string _EMAIL;
+		
+		private int _SOGHE;
+		
+		private string _MAKHUYENMAI;
+		
+		private string _GHICHU;
+		
 		private System.Nullable<bool> _TRANGTHAI;
 		
 		private EntitySet<CHITIETHOADON> _CHITIETHOADONs;
@@ -879,6 +895,22 @@ namespace BLL_DAL
     partial void OnNGAYLAPChanged();
     partial void OnTHANHTIENChanging(System.Nullable<int> value);
     partial void OnTHANHTIENChanged();
+    partial void OnSOHOADONChanging(int value);
+    partial void OnSOHOADONChanged();
+    partial void OnTENNGUOIDATChanging(string value);
+    partial void OnTENNGUOIDATChanged();
+    partial void OnDIACHIChanging(string value);
+    partial void OnDIACHIChanged();
+    partial void OnSDTChanging(string value);
+    partial void OnSDTChanged();
+    partial void OnEMAILChanging(string value);
+    partial void OnEMAILChanged();
+    partial void OnSOGHEChanging(int value);
+    partial void OnSOGHEChanged();
+    partial void OnMAKHUYENMAIChanging(string value);
+    partial void OnMAKHUYENMAIChanged();
+    partial void OnGHICHUChanging(string value);
+    partial void OnGHICHUChanged();
     partial void OnTRANGTHAIChanging(System.Nullable<bool> value);
     partial void OnTRANGTHAIChanged();
     #endregion
@@ -971,6 +1003,166 @@ namespace BLL_DAL
 					this._THANHTIEN = value;
 					this.SendPropertyChanged("THANHTIEN");
 					this.OnTHANHTIENChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOHOADON", DbType="Int NOT NULL")]
+		public int SOHOADON
+		{
+			get
+			{
+				return this._SOHOADON;
+			}
+			set
+			{
+				if ((this._SOHOADON != value))
+				{
+					this.OnSOHOADONChanging(value);
+					this.SendPropertyChanging();
+					this._SOHOADON = value;
+					this.SendPropertyChanged("SOHOADON");
+					this.OnSOHOADONChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENNGUOIDAT", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string TENNGUOIDAT
+		{
+			get
+			{
+				return this._TENNGUOIDAT;
+			}
+			set
+			{
+				if ((this._TENNGUOIDAT != value))
+				{
+					this.OnTENNGUOIDATChanging(value);
+					this.SendPropertyChanging();
+					this._TENNGUOIDAT = value;
+					this.SendPropertyChanged("TENNGUOIDAT");
+					this.OnTENNGUOIDATChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(255)")]
+		public string DIACHI
+		{
+			get
+			{
+				return this._DIACHI;
+			}
+			set
+			{
+				if ((this._DIACHI != value))
+				{
+					this.OnDIACHIChanging(value);
+					this.SendPropertyChanging();
+					this._DIACHI = value;
+					this.SendPropertyChanged("DIACHI");
+					this.OnDIACHIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="NVarChar(10) NOT NULL", CanBeNull=false)]
+		public string SDT
+		{
+			get
+			{
+				return this._SDT;
+			}
+			set
+			{
+				if ((this._SDT != value))
+				{
+					this.OnSDTChanging(value);
+					this.SendPropertyChanging();
+					this._SDT = value;
+					this.SendPropertyChanged("SDT");
+					this.OnSDTChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="NVarChar(255)")]
+		public string EMAIL
+		{
+			get
+			{
+				return this._EMAIL;
+			}
+			set
+			{
+				if ((this._EMAIL != value))
+				{
+					this.OnEMAILChanging(value);
+					this.SendPropertyChanging();
+					this._EMAIL = value;
+					this.SendPropertyChanged("EMAIL");
+					this.OnEMAILChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOGHE", DbType="Int NOT NULL")]
+		public int SOGHE
+		{
+			get
+			{
+				return this._SOGHE;
+			}
+			set
+			{
+				if ((this._SOGHE != value))
+				{
+					this.OnSOGHEChanging(value);
+					this.SendPropertyChanging();
+					this._SOGHE = value;
+					this.SendPropertyChanged("SOGHE");
+					this.OnSOGHEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKHUYENMAI", DbType="NVarChar(50)")]
+		public string MAKHUYENMAI
+		{
+			get
+			{
+				return this._MAKHUYENMAI;
+			}
+			set
+			{
+				if ((this._MAKHUYENMAI != value))
+				{
+					this.OnMAKHUYENMAIChanging(value);
+					this.SendPropertyChanging();
+					this._MAKHUYENMAI = value;
+					this.SendPropertyChanged("MAKHUYENMAI");
+					this.OnMAKHUYENMAIChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GHICHU", DbType="NVarChar(255)")]
+		public string GHICHU
+		{
+			get
+			{
+				return this._GHICHU;
+			}
+			set
+			{
+				if ((this._GHICHU != value))
+				{
+					this.OnGHICHUChanging(value);
+					this.SendPropertyChanging();
+					this._GHICHU = value;
+					this.SendPropertyChanged("GHICHU");
+					this.OnGHICHUChanged();
 				}
 			}
 		}
@@ -1110,7 +1302,7 @@ namespace BLL_DAL
 		
 		private string _TENKH;
 		
-		private System.DateTime _NGAYSINH;
+		private System.Nullable<System.DateTime> _NGAYSINH;
 		
 		private string _GIOITINH;
 		
@@ -1130,7 +1322,7 @@ namespace BLL_DAL
 		
 		private EntitySet<HOADON> _HOADONs;
 		
-		private EntitySet<VEXETRONGGIOHANG> _VEXETRONGGIOHANGs;
+		private EntitySet<VEXEYEUTHICH> _VEXEYEUTHICHes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1140,7 +1332,7 @@ namespace BLL_DAL
     partial void OnMAKHChanged();
     partial void OnTENKHChanging(string value);
     partial void OnTENKHChanged();
-    partial void OnNGAYSINHChanging(System.DateTime value);
+    partial void OnNGAYSINHChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYSINHChanged();
     partial void OnGIOITINHChanging(string value);
     partial void OnGIOITINHChanged();
@@ -1162,7 +1354,7 @@ namespace BLL_DAL
 		{
 			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
 			this._HOADONs = new EntitySet<HOADON>(new Action<HOADON>(this.attach_HOADONs), new Action<HOADON>(this.detach_HOADONs));
-			this._VEXETRONGGIOHANGs = new EntitySet<VEXETRONGGIOHANG>(new Action<VEXETRONGGIOHANG>(this.attach_VEXETRONGGIOHANGs), new Action<VEXETRONGGIOHANG>(this.detach_VEXETRONGGIOHANGs));
+			this._VEXEYEUTHICHes = new EntitySet<VEXEYEUTHICH>(new Action<VEXEYEUTHICH>(this.attach_VEXEYEUTHICHes), new Action<VEXEYEUTHICH>(this.detach_VEXEYEUTHICHes));
 			OnCreated();
 		}
 		
@@ -1206,8 +1398,8 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="Date NOT NULL")]
-		public System.DateTime NGAYSINH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYSINH", DbType="Date")]
+		public System.Nullable<System.DateTime> NGAYSINH
 		{
 			get
 			{
@@ -1226,7 +1418,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="NVarChar(5) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GIOITINH", DbType="NVarChar(5)")]
 		public string GIOITINH
 		{
 			get
@@ -1246,7 +1438,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(50)")]
 		public string DIACHI
 		{
 			get
@@ -1266,7 +1458,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SDT", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string SDT
 		{
 			get
@@ -1286,7 +1478,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAIKHOAN", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TAIKHOAN", DbType="VarChar(50)")]
 		public string TAIKHOAN
 		{
 			get
@@ -1306,7 +1498,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MATKHAU", DbType="VarChar(50)")]
 		public string MATKHAU
 		{
 			get
@@ -1326,7 +1518,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EMAIL", DbType="VarChar(50)")]
 		public string EMAIL
 		{
 			get
@@ -1392,16 +1584,16 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXETRONGGIOHANG", Storage="_VEXETRONGGIOHANGs", ThisKey="MAKH", OtherKey="MAKH")]
-		public EntitySet<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXEYEUTHICH", Storage="_VEXEYEUTHICHes", ThisKey="MAKH", OtherKey="MAKH")]
+		public EntitySet<VEXEYEUTHICH> VEXEYEUTHICHes
 		{
 			get
 			{
-				return this._VEXETRONGGIOHANGs;
+				return this._VEXEYEUTHICHes;
 			}
 			set
 			{
-				this._VEXETRONGGIOHANGs.Assign(value);
+				this._VEXEYEUTHICHes.Assign(value);
 			}
 		}
 		
@@ -1449,13 +1641,13 @@ namespace BLL_DAL
 			entity.KHACHHANG = null;
 		}
 		
-		private void attach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		private void attach_VEXEYEUTHICHes(VEXEYEUTHICH entity)
 		{
 			this.SendPropertyChanging();
 			entity.KHACHHANG = this;
 		}
 		
-		private void detach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		private void detach_VEXEYEUTHICHes(VEXEYEUTHICH entity)
 		{
 			this.SendPropertyChanging();
 			entity.KHACHHANG = null;
@@ -2085,6 +2277,8 @@ namespace BLL_DAL
 		
 		private System.Nullable<int> _LUOTDANHGIA;
 		
+		private System.Nullable<bool> _YEUTHICH;
+		
 		private string _MOTA;
 		
 		private string _HINHANH;
@@ -2093,7 +2287,7 @@ namespace BLL_DAL
 		
 		private EntitySet<DANHGIA> _DANHGIAs;
 		
-		private EntitySet<VEXETRONGGIOHANG> _VEXETRONGGIOHANGs;
+		private EntitySet<VEXEYEUTHICH> _VEXEYEUTHICHes;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2121,6 +2315,8 @@ namespace BLL_DAL
     partial void OnSOSAOChanged();
     partial void OnLUOTDANHGIAChanging(System.Nullable<int> value);
     partial void OnLUOTDANHGIAChanged();
+    partial void OnYEUTHICHChanging(System.Nullable<bool> value);
+    partial void OnYEUTHICHChanged();
     partial void OnMOTAChanging(string value);
     partial void OnMOTAChanged();
     partial void OnHINHANHChanging(string value);
@@ -2131,7 +2327,7 @@ namespace BLL_DAL
 		{
 			this._CHITIETHOADONs = new EntitySet<CHITIETHOADON>(new Action<CHITIETHOADON>(this.attach_CHITIETHOADONs), new Action<CHITIETHOADON>(this.detach_CHITIETHOADONs));
 			this._DANHGIAs = new EntitySet<DANHGIA>(new Action<DANHGIA>(this.attach_DANHGIAs), new Action<DANHGIA>(this.detach_DANHGIAs));
-			this._VEXETRONGGIOHANGs = new EntitySet<VEXETRONGGIOHANG>(new Action<VEXETRONGGIOHANG>(this.attach_VEXETRONGGIOHANGs), new Action<VEXETRONGGIOHANG>(this.detach_VEXETRONGGIOHANGs));
+			this._VEXEYEUTHICHes = new EntitySet<VEXEYEUTHICH>(new Action<VEXEYEUTHICH>(this.attach_VEXEYEUTHICHes), new Action<VEXEYEUTHICH>(this.detach_VEXEYEUTHICHes));
 			OnCreated();
 		}
 		
@@ -2255,7 +2451,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDI", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYDI", DbType="DateTime NOT NULL")]
 		public System.DateTime NGAYDI
 		{
 			get
@@ -2275,7 +2471,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYVE", DbType="Date NOT NULL")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYVE", DbType="DateTime NOT NULL")]
 		public System.DateTime NGAYVE
 		{
 			get
@@ -2355,6 +2551,26 @@ namespace BLL_DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YEUTHICH", DbType="Bit")]
+		public System.Nullable<bool> YEUTHICH
+		{
+			get
+			{
+				return this._YEUTHICH;
+			}
+			set
+			{
+				if ((this._YEUTHICH != value))
+				{
+					this.OnYEUTHICHChanging(value);
+					this.SendPropertyChanging();
+					this._YEUTHICH = value;
+					this.SendPropertyChanged("YEUTHICH");
+					this.OnYEUTHICHChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
 		public string MOTA
 		{
@@ -2421,16 +2637,16 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXETRONGGIOHANG", Storage="_VEXETRONGGIOHANGs", ThisKey="MAVE", OtherKey="MAVE")]
-		public EntitySet<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXEYEUTHICH", Storage="_VEXEYEUTHICHes", ThisKey="MAVE", OtherKey="MAVE")]
+		public EntitySet<VEXEYEUTHICH> VEXEYEUTHICHes
 		{
 			get
 			{
-				return this._VEXETRONGGIOHANGs;
+				return this._VEXEYEUTHICHes;
 			}
 			set
 			{
-				this._VEXETRONGGIOHANGs.Assign(value);
+				this._VEXEYEUTHICHes.Assign(value);
 			}
 		}
 		
@@ -2478,21 +2694,21 @@ namespace BLL_DAL
 			entity.VEXE = null;
 		}
 		
-		private void attach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		private void attach_VEXEYEUTHICHes(VEXEYEUTHICH entity)
 		{
 			this.SendPropertyChanging();
 			entity.VEXE = this;
 		}
 		
-		private void detach_VEXETRONGGIOHANGs(VEXETRONGGIOHANG entity)
+		private void detach_VEXEYEUTHICHes(VEXEYEUTHICH entity)
 		{
 			this.SendPropertyChanging();
 			entity.VEXE = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VEXETRONGGIOHANG")]
-	public partial class VEXETRONGGIOHANG : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VEXEYEUTHICH")]
+	public partial class VEXEYEUTHICH : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -2500,8 +2716,6 @@ namespace BLL_DAL
 		private int _MAVE;
 		
 		private int _MAKH;
-		
-		private System.Nullable<int> _SOLUONG;
 		
 		private EntityRef<KHACHHANG> _KHACHHANG;
 		
@@ -2515,11 +2729,9 @@ namespace BLL_DAL
     partial void OnMAVEChanged();
     partial void OnMAKHChanging(int value);
     partial void OnMAKHChanged();
-    partial void OnSOLUONGChanging(System.Nullable<int> value);
-    partial void OnSOLUONGChanged();
     #endregion
 		
-		public VEXETRONGGIOHANG()
+		public VEXEYEUTHICH()
 		{
 			this._KHACHHANG = default(EntityRef<KHACHHANG>);
 			this._VEXE = default(EntityRef<VEXE>);
@@ -2574,27 +2786,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="Int")]
-		public System.Nullable<int> SOLUONG
-		{
-			get
-			{
-				return this._SOLUONG;
-			}
-			set
-			{
-				if ((this._SOLUONG != value))
-				{
-					this.OnSOLUONGChanging(value);
-					this.SendPropertyChanging();
-					this._SOLUONG = value;
-					this.SendPropertyChanged("SOLUONG");
-					this.OnSOLUONGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXETRONGGIOHANG", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXEYEUTHICH", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
 		public KHACHHANG KHACHHANG
 		{
 			get
@@ -2611,12 +2803,12 @@ namespace BLL_DAL
 					if ((previousValue != null))
 					{
 						this._KHACHHANG.Entity = null;
-						previousValue.VEXETRONGGIOHANGs.Remove(this);
+						previousValue.VEXEYEUTHICHes.Remove(this);
 					}
 					this._KHACHHANG.Entity = value;
 					if ((value != null))
 					{
-						value.VEXETRONGGIOHANGs.Add(this);
+						value.VEXEYEUTHICHes.Add(this);
 						this._MAKH = value.MAKH;
 					}
 					else
@@ -2628,7 +2820,7 @@ namespace BLL_DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXETRONGGIOHANG", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXEYEUTHICH", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
 		public VEXE VEXE
 		{
 			get
@@ -2645,12 +2837,12 @@ namespace BLL_DAL
 					if ((previousValue != null))
 					{
 						this._VEXE.Entity = null;
-						previousValue.VEXETRONGGIOHANGs.Remove(this);
+						previousValue.VEXEYEUTHICHes.Remove(this);
 					}
 					this._VEXE.Entity = value;
 					if ((value != null))
 					{
-						value.VEXETRONGGIOHANGs.Add(this);
+						value.VEXEYEUTHICHes.Add(this);
 						this._MAVE = value.MAVE;
 					}
 					else
