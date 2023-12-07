@@ -35,9 +35,7 @@
             this.btnThem = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtGiaVe = new System.Windows.Forms.TextBox();
-            this.txtDiemDen = new System.Windows.Forms.TextBox();
             this.txtTenVe = new System.Windows.Forms.TextBox();
-            this.txtDiemDon = new System.Windows.Forms.TextBox();
             this.txtMaVe = new System.Windows.Forms.TextBox();
             this.txtGheTrong = new System.Windows.Forms.NumericUpDown();
             this.txtPhut = new System.Windows.Forms.NumericUpDown();
@@ -66,6 +64,8 @@
             this.nGAYVEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tHOIGIANDONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vEXEBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.txtDiemDon = new System.Windows.Forms.ComboBox();
+            this.txtDiemDen = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGheTrong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhut)).BeginInit();
@@ -117,10 +117,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.txtGiaVe);
             this.groupBox2.Controls.Add(this.txtDiemDen);
-            this.groupBox2.Controls.Add(this.txtTenVe);
             this.groupBox2.Controls.Add(this.txtDiemDon);
+            this.groupBox2.Controls.Add(this.txtGiaVe);
+            this.groupBox2.Controls.Add(this.txtTenVe);
             this.groupBox2.Controls.Add(this.txtMaVe);
             this.groupBox2.Controls.Add(this.txtGheTrong);
             this.groupBox2.Controls.Add(this.txtPhut);
@@ -152,14 +152,6 @@
             this.txtGiaVe.Size = new System.Drawing.Size(101, 20);
             this.txtGiaVe.TabIndex = 24;
             // 
-            // txtDiemDen
-            // 
-            this.txtDiemDen.Enabled = false;
-            this.txtDiemDen.Location = new System.Drawing.Point(437, 58);
-            this.txtDiemDen.Name = "txtDiemDen";
-            this.txtDiemDen.Size = new System.Drawing.Size(101, 20);
-            this.txtDiemDen.TabIndex = 23;
-            // 
             // txtTenVe
             // 
             this.txtTenVe.Enabled = false;
@@ -167,14 +159,6 @@
             this.txtTenVe.Name = "txtTenVe";
             this.txtTenVe.Size = new System.Drawing.Size(117, 20);
             this.txtTenVe.TabIndex = 22;
-            // 
-            // txtDiemDon
-            // 
-            this.txtDiemDon.Enabled = false;
-            this.txtDiemDon.Location = new System.Drawing.Point(254, 58);
-            this.txtDiemDon.Name = "txtDiemDon";
-            this.txtDiemDon.Size = new System.Drawing.Size(114, 20);
-            this.txtDiemDon.TabIndex = 21;
             // 
             // txtMaVe
             // 
@@ -189,13 +173,18 @@
             this.txtGheTrong.Enabled = false;
             this.txtGheTrong.Location = new System.Drawing.Point(75, 59);
             this.txtGheTrong.Maximum = new decimal(new int[] {
-            23,
+            46,
             0,
             0,
             0});
             this.txtGheTrong.Name = "txtGheTrong";
             this.txtGheTrong.Size = new System.Drawing.Size(99, 20);
             this.txtGheTrong.TabIndex = 19;
+            this.txtGheTrong.Value = new decimal(new int[] {
+            46,
+            0,
+            0,
+            0});
             // 
             // txtPhut
             // 
@@ -420,6 +409,48 @@
             // 
             this.vEXEBindingSource.DataSource = typeof(BLL_DAL.VEXE);
             // 
+            // txtDiemDon
+            // 
+            this.txtDiemDon.Enabled = false;
+            this.txtDiemDon.FormattingEnabled = true;
+            this.txtDiemDon.Items.AddRange(new object[] {
+            "Hồ Chí Minh",
+            "Hà Nội",
+            "Quảng Ninh",
+            "Đà Nẵng",
+            "Ninh Bình",
+            "Hải Phòng",
+            "Hội An",
+            "Phú Yên",
+            "Đà Lạt",
+            "Nha Trang",
+            "Vũng Tàu"});
+            this.txtDiemDon.Location = new System.Drawing.Point(254, 58);
+            this.txtDiemDon.Name = "txtDiemDon";
+            this.txtDiemDon.Size = new System.Drawing.Size(114, 21);
+            this.txtDiemDon.TabIndex = 25;
+            // 
+            // txtDiemDen
+            // 
+            this.txtDiemDen.Enabled = false;
+            this.txtDiemDen.FormattingEnabled = true;
+            this.txtDiemDen.Items.AddRange(new object[] {
+            "Hồ Chí Minh",
+            "Hà Nội",
+            "Quảng Ninh",
+            "Đà Nẵng",
+            "Ninh Bình",
+            "Hải Phòng",
+            "Hội An",
+            "Phú Yên",
+            "Đà Lạt",
+            "Nha Trang",
+            "Vũng Tàu"});
+            this.txtDiemDen.Location = new System.Drawing.Point(437, 58);
+            this.txtDiemDen.Name = "txtDiemDen";
+            this.txtDiemDen.Size = new System.Drawing.Size(101, 21);
+            this.txtDiemDen.TabIndex = 26;
+            // 
             // frmVeXe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -480,10 +511,10 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.NumericUpDown txtGio;
         private System.Windows.Forms.TextBox txtGiaVe;
-        private System.Windows.Forms.TextBox txtDiemDen;
         private System.Windows.Forms.TextBox txtTenVe;
-        private System.Windows.Forms.TextBox txtDiemDon;
         private System.Windows.Forms.TextBox txtMaVe;
         private System.Windows.Forms.NumericUpDown txtGheTrong;
+        private System.Windows.Forms.ComboBox txtDiemDen;
+        private System.Windows.Forms.ComboBox txtDiemDon;
     }
 }

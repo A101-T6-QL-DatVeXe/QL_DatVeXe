@@ -73,7 +73,7 @@ namespace GUI
             vx.NGAYVE = DateTime.Parse(txtNgayVe.Text);
             vx.THOIGIANDON = txtGio.Text + " giờ " + txtPhut.Text + " phút";
             vx.MOTA = "Giường nằm 40 chỗ có toilet";
-            vx.HINHANH = "offer_4.jpg";
+            vx.HINHANH = "phuongnam.jpeg";
 
             if (veXe.addNewVeXe(vx))
             {

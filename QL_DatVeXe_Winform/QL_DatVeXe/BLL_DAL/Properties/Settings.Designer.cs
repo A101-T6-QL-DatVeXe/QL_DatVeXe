@@ -32,5 +32,16 @@ namespace BLL_DAL.Properties {
                 return ((string)(this["QL_DATVEXEConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KENTCFS;Initial Catalog=QL_DATVEXE;Integrated Security=True;Encrypt=F" +
+            "alse")]
+        public string QL_DATVEXEConnectionString1 {
+            get {
+                return ((string)(this["QL_DATVEXEConnectionString1"]));
+            }
+        }
     }
 }

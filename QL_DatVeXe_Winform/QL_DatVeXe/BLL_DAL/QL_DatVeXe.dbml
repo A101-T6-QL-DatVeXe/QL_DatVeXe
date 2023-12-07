@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_DATVEXE" Class="QL_DatVeXeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=KENTCFS;Initial Catalog=QL_DATVEXE;Persist Security Info=True;User ID=sa;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QL_DATVEXEConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=KENTCFS;Initial Catalog=QL_DATVEXE;Integrated Security=True;Encrypt=False" SettingsObjectName="BLL_DAL.Properties.Settings" SettingsPropertyName="QL_DATVEXEConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CHITIETHOADON" Member="CHITIETHOADONs">
     <Type Name="CHITIETHOADON">
       <Column Name="MAHD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SOLUONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SOGHE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="HOADON_CHITIETHOADON" Member="HOADON" ThisKey="MAHD" OtherKey="MAHD" Type="HOADON" IsForeignKey="true" />
       <Association Name="VEXE_CHITIETHOADON" Member="VEXE" ThisKey="MAVE" OtherKey="MAVE" Type="VEXE" IsForeignKey="true" />
     </Type>
@@ -37,6 +37,14 @@
       <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="THANHTIEN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SOHOADON" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TENNGUOIDAT" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SOGHE" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MAKHUYENMAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GHICHU" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="HOADON_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MAHD" OtherKey="MAHD" Type="CHITIETHOADON" />
       <Association Name="HOADON_XACNHANHOADON" Member="XACNHANHOADONs" ThisKey="MAHD" OtherKey="MAHD" Type="XACNHANHOADON" />
@@ -47,17 +55,17 @@
     <Type Name="KHACHHANG">
       <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TENKH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SDT" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="TAIKHOAN" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TAIKHOAN" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MATKHAU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TRANGTHAI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="KHACHHANG_DANHGIA" Member="DANHGIAs" ThisKey="MAKH" OtherKey="MAKH" Type="DANHGIA" />
       <Association Name="KHACHHANG_HOADON" Member="HOADONs" ThisKey="MAKH" OtherKey="MAKH" Type="HOADON" />
-      <Association Name="KHACHHANG_VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs" ThisKey="MAKH" OtherKey="MAKH" Type="VEXETRONGGIOHANG" />
+      <Association Name="KHACHHANG_VEXEYEUTHICH" Member="VEXEYEUTHICHes" ThisKey="MAKH" OtherKey="MAKH" Type="VEXEYEUTHICH" />
     </Type>
   </Table>
   <Table Name="dbo.NHANVIEN" Member="NHANVIENs">
@@ -99,25 +107,25 @@
       <Column Name="CONTRONG" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DIEMDON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DIEMDEN" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="NGAYDI" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="NGAYVE" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYDI" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NGAYVE" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="THOIGIANDON" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SOSAO" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="LUOTDANHGIA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEUTHICH" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
       <Column Name="HINHANH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="VEXE_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MAVE" OtherKey="MAVE" Type="CHITIETHOADON" />
       <Association Name="VEXE_DANHGIA" Member="DANHGIAs" ThisKey="MAVE" OtherKey="MAVE" Type="DANHGIA" />
-      <Association Name="VEXE_VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs" ThisKey="MAVE" OtherKey="MAVE" Type="VEXETRONGGIOHANG" />
+      <Association Name="VEXE_VEXEYEUTHICH" Member="VEXEYEUTHICHes" ThisKey="MAVE" OtherKey="MAVE" Type="VEXEYEUTHICH" />
     </Type>
   </Table>
-  <Table Name="dbo.VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs">
-    <Type Name="VEXETRONGGIOHANG">
+  <Table Name="dbo.VEXEYEUTHICH" Member="VEXEYEUTHICHes">
+    <Type Name="VEXEYEUTHICH">
       <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="KHACHHANG_VEXETRONGGIOHANG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
-      <Association Name="VEXE_VEXETRONGGIOHANG" Member="VEXE" ThisKey="MAVE" OtherKey="MAVE" Type="VEXE" IsForeignKey="true" />
+      <Association Name="KHACHHANG_VEXEYEUTHICH" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="VEXE_VEXEYEUTHICH" Member="VEXE" ThisKey="MAVE" OtherKey="MAVE" Type="VEXE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
