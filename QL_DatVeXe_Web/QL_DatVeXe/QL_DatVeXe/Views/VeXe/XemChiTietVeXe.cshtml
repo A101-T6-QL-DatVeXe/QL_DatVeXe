@@ -4,7 +4,7 @@
     ViewBag.Title = "XemChiTietVeXe";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{ 
+@{
     var tb = Session["TB"] as string;
 }
 
@@ -30,10 +30,22 @@
                             <div class="hotel_location khoihanh-fontweight">Ngày @Model.VeXe.NGAYDI.ToString("dd/MM/yyyy") - @Model.VeXe.NGAYVE.ToString("dd/MM/yyyy")</div>
                         </div>
                         <div class="offers_price_content ml-lg-auto text-lg-right">
-                            <div class="offers_price">@Model.VeXe.GIAVE&ETH</div>
+                            <div class="offers_price">@string.Format("{0:N0}", Model.VeXe.GIAVE)&ETH;</div>
                         </div>
                         <div class="hotel_title_button ml-lg-auto text-lg-right" style="margin-top:20px;">
-                            <div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+                            <div class="button book_button trans_200"><a href="@Url.Action("DatVe", "VeXe", new { mave = Model.VeXe.MAVE })">book<span></span><span></span><span></span></a></div>
+                        </div>
+                        <div class="thatimchitiet">
+                            <a href="@Url.Action("ThemVeXeYeuThich", "YeuThich", new { mave = Model.VeXe.MAVE })">
+                                @if (Model.VeXe.YEUTHICH == false)
+                                {
+                                    <i class="fa fa-heart-o" style="color:#fe0083"></i>
+                                }
+                                else
+                                {
+                                    <i class="fa fa-heart" style="color:#fe0083"></i>
+                                }
+                            </a>
                         </div>
                     </div>
                     <!-- Listing Image -->
@@ -55,7 +67,15 @@
                                         <div class="hotel_review_title">đánh giá kém</div>
                                     }
                                     <div class="hotel_review_subtitle">@Model.VeXe.LUOTDANHGIA reviews</div>
-                                    <div class="hotel_ghe_subtitle">Còn @Model.VeXe.CONTRONG chỗ trống</div>
+                                    @if (Model.VeXe.CONTRONG == 0)
+                                    {
+                                        <div class="hotel_ghe_subtitle" style="color:red; font-weight:bold; font-size:20px;">HẾT GHẾ</div>
+                                    }
+                                    else
+                                    {
+                                        <div class="hotel_ghe_subtitle">Còn @Model.VeXe.CONTRONG chỗ trống</div>
+
+                                    }
                                 </div>
                                 <div class="hotel_review_rating text-center">@(Model.VeXe.SOSAO * 2)</div>
                             </div>
@@ -128,7 +148,11 @@
                                 <linearGradient id='hotel_grad_prev'>
                                 <stop offset='0%' stop-color='#fa9e1b' />
 
+
+
                                 <stop offset='100%' stop-color='#8d4fff' />
+
+
 
 												</linearGradient>
 											</defs>
@@ -136,8 +160,12 @@
 											M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
 											C22.545,2,26,5.541,26,9.909V23.091z" />
 
+
+
                                 <polygon class="nav_arrow" fill="#F3F6F9" points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219
 											11.042,18.219 " />
+
+
 
 										</svg>
                             </div>
@@ -150,7 +178,11 @@
                                 <linearGradient id='hotel_grad_next'>
                                 <stop offset='0%' stop-color='#fa9e1b' />
 
+
+
                                 <stop offset='100%' stop-color='#8d4fff' />
+
+
 
 												</linearGradient>
 											</defs>
@@ -158,8 +190,12 @@
 										M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
 										C22.545,2,26,5.541,26,9.909V23.091z" />
 
+
+
                                 <polygon class="nav_arrow" fill="#F3F6F9" points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554
 										17.046,15.554 " />
+
+
 
 										</svg>
                             </div>
@@ -190,21 +226,23 @@
                             <!-- Room -->
                             <div class="row">
                                 <div class="col-lg-2">
-                                    <div class="room_image"><img src="~/Content/images/@item.HINHANH" alt=""></div>
+                                    <div class="room_image"><a href="@Url.Action("XemChiTietVeXe", "VeXe", new { mave = item.MAVE, diemden = item.DIEMDEN })">
+                                        <img src="~/Content/images/@item.HINHANH" alt=""></a>
+                                    </div>
                                     <div class="room_khoihanh rating_r rating_r_@item.SOSAO offers_rating"><a href="single_listing.html"><i></i><i></i><i></i><i></i><i></i> </a></div>
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="room_content">
-                                        <div class="room_title">@item.TENVE</div>
+                                        <div class="room_title"><a href="@Url.Action("XemChiTietVeXe", "VeXe", new { mave = item.MAVE, diemden = item.DIEMDEN })">@item.TENVE</a></div>
                                         <div class="room_diadiem">@item.DIEMDON - @item.DIEMDEN</div>
-                                        <div class="room_price">@item.GIAVE&ETH</div>
+                                        <div class="room_price">@string.Format("{0:N0}", item.GIAVE) &ETH;</div>
                                         <div class="room_text">Khởi hành lúc @item.THOIGIANDON ngày @item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</div>
                                         <div class="room_extra">@item.MOTA</div>
                                     </div>
                                 </div>
                                 <div class="col-lg-3 text-lg-right">
                                     <div class="room_button">
-                                        <div class="button book_button trans_200"><a href="#">book<span></span><span></span><span></span></a></div>
+                                        <div class="button book_button trans_200"><a href="@Url.Action("DatVe", "VeXe", new { mave = item.MAVE })">book<span></span><span></span><span></span></a></div>
                                     </div>
                                 </div>
                             </div>

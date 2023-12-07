@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QL_DatVeXe</RootNamespace>
     <AssemblyName>QL_DatVeXe</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,15 +48,17 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -102,7 +103,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -121,17 +121,21 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HoaDonController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoiDungController.cs" />
     <Compile Include="Controllers\VeXeController.cs" />
+    <Compile Include="Controllers\YeuThichController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\QL_DatVeXe.designer.cs">
+    <Compile Include="Models\ChoXacNhan.cs" />
+    <Compile Include="Models\QL_DATVEXE.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>QL_DatVeXe.dbml</DependentUpon>
+      <DependentUpon>QL_DATVEXE.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\User_DatHang.cs" />
     <Compile Include="Models\VeXeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -264,9 +268,6 @@
     <Content Include="Content\images\trend_6.png" />
     <Content Include="Content\images\trend_7.png" />
     <Content Include="Content\images\trend_8.png" />
-    <Content Include="Content\js\about_custom.js" />
-    <Content Include="Content\js\blog_custom.js" />
-    <Content Include="Content\js\contact_custom.js" />
     <Content Include="Content\js\custom.js" />
     <Content Include="Content\js\elements_custom.js" />
     <Content Include="Content\js\jquery-3.2.1.min.js" />
@@ -299,17 +300,9 @@
     <Content Include="Content\plugins\parallax-js-master\parallax.min.js" />
     <Content Include="Content\plugins\progressbar\progressbar.min.js" />
     <Content Include="Content\plugins\scrollmagic\ScrollMagic.min.js" />
-    <Content Include="Content\styles\about_responsive.css" />
-    <Content Include="Content\styles\about_styles.css" />
-    <Content Include="Content\styles\blog_responsive.css" />
-    <Content Include="Content\styles\blog_styles.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.css" />
     <Content Include="Content\styles\bootstrap4\bootstrap.min.js" />
     <Content Include="Content\styles\bootstrap4\popper.js" />
-    <Content Include="Content\styles\contact_responsive.css" />
-    <Content Include="Content\styles\contact_styles.css" />
-    <Content Include="Content\styles\elements_responsive.css" />
-    <Content Include="Content\styles\elements_styles.css" />
     <Content Include="Content\styles\main_styles.css" />
     <Content Include="Content\styles\offers_responsive.css" />
     <Content Include="Content\styles\offers_styles.css" />
@@ -322,6 +315,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Models\QL_DATVEXE.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QL_DATVEXE.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\fonts\beyond_the_mountains.otf" />
     <Content Include="Content\fonts\beyond_the_mountains.ttf" />
     <Content Include="Content\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
@@ -455,13 +453,8 @@
     <Content Include="Account\scss\bootstrap\_utilities.scss" />
     <Content Include="Account\scss\bootstrap\_variables.scss" />
     <Content Include="Account\scss\style.scss" />
-    <Content Include="Models\QL_DatVeXe.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QL_DatVeXe.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Models\QL_DatVeXe.dbml.layout">
-      <DependentUpon>QL_DatVeXe.dbml</DependentUpon>
+    <None Include="Models\QL_DATVEXE.dbml.layout">
+      <DependentUpon>QL_DATVEXE.dbml</DependentUpon>
     </None>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -494,9 +487,15 @@
     <Content Include="Views\NguoiDung\DangNhap.cshtml" />
     <Content Include="Views\VeXe\TimVe.cshtml" />
     <Content Include="Views\VeXe\XemChiTietVeXe.cshtml" />
+    <Content Include="Views\YeuThich\VeXeYeuThich.cshtml" />
+    <Content Include="Views\YeuThich\YeuThichRong.cshtml" />
+    <Content Include="Views\VeXe\DatVe.cshtml" />
+    <Content Include="Views\VeXe\ThongBaoDatVe.cshtml" />
+    <Content Include="Views\HoaDon\HoaDonChoXacNhan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\DatHang\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -533,8 +532,6 @@
           <DevelopmentServerPort>58632</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:58632/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://localhost:58632/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -87,7 +87,7 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="offers_content">
-                                    <div class="offers_price">@item.GIAVE&ETH<span class="khoihanh">Khởi hành lúc @item.THOIGIANDON</span></div><br /><span class="sos">@item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</span>
+                                    <div class="offers_price ml-2">@string.Format("{0:N0}", item.GIAVE)&ETH;<span class="khoihanh">Khởi hành lúc @item.THOIGIANDON</span></div><br /><span class="sos">@item.NGAYDI.ToString("dd/MM/yyyy") - @item.NGAYVE.ToString("dd/MM/yyyy")</span>
                                     <div class="rating_r rating_r_@item.SOSAO offers_rating" data-rating="@item.SOSAO">
                                         <i></i>
                                         <i></i>
@@ -104,7 +104,20 @@
                                             <li class="offers_icons_item"><img src="~/Content/images/sailboat.png" alt=""></li>
                                         </ul>
                                     </div>
-                                    <div class="button book_button"><a href="#">book<span></span><span></span><span></span></a></div>
+
+                                    <div class="button book_button"><a href="@Url.Action("DatVe", "VeXe", new { mave = item.MAVE })">book<span></span><span></span><span></span></a></div>
+                                    <div class="thatim">
+                                        <a href="@Url.Action("ThemVeXeYeuThich", "YeuThich", new { mave = item.MAVE })">
+                                            @if (item.YEUTHICH == false)
+                                            {
+                                                <i class="fa fa-heart-o" style="color:#fe0083"></i>
+                                            }
+                                            else
+                                            {
+                                                <i class="fa fa-heart" style="color:#fe0083"></i>
+                                            }
+                                        </a>
+                                    </div>
                                     <div class="offer_reviews">
                                         <div class="offer_reviews_content">
                                             @if ((item.SOSAO * 2) >= 8 && (item.SOSAO * 2) <= 10)
@@ -121,7 +134,15 @@
                                             }
 
                                             <div class="offer_reviews_subtitle" data-review="@item.LUOTDANHGIA">@item.LUOTDANHGIA reviews</div>
-                                            <div class="offer_ghe_subtitle" data-ghe="@item.CONTRONG">Còn @item.CONTRONG chỗ trống</div>
+                                            @if (item.CONTRONG == 0)
+                                            {
+                                                <div class="offer_ghe_subtitle" style="color:red; font-weight:bold; font-size:30px; position:relative; top:40px; right:200px;" data-ghe="@item.CONTRONG">HẾT GHẾ</div>
+                                            }
+                                            else
+                                            {
+                                                <div class="offer_ghe_subtitle" data-ghe="@item.CONTRONG">Còn @item.CONTRONG chỗ trống</div>
+
+                                            }
                                         </div>
                                         <div class="offer_reviews_rating text-center">@(item.SOSAO * 2)</div>
                                     </div>
