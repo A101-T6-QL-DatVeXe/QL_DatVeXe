@@ -223,10 +223,7 @@ VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui ve
 		(6,18, N'', N'', 3, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(1,19, N'', N'', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,20, N'', N'', 5, 'review_1.jpg', '2023-12-01 01:24:36.180');
-<<<<<<< HEAD
 
-=======
->>>>>>> e808900d4ab8bd22362da1ef17461a0aa8810ada
 GO
 INSERT INTO NHANVIEN
 VALUES  (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
