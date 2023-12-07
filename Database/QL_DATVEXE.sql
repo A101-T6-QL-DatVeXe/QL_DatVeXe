@@ -1,4 +1,4 @@
-﻿CREATE DATABASE QL_DATVEXE
+CREATE DATABASE QL_DATVEXE
 GO
 USE QL_DATVEXE
 
@@ -178,6 +178,18 @@ BEGIN
 END;
 
 GO
+INSERT INTO NHANVIEN
+VALUES  (N'Lê Bùi Tấn Trưởng', '2002-01-28', N'Nam', N'Bình Định',N'0328467924', N'Đang làm'),
+		(N'Nguyễn Nguyên Bảo', '2002-12-21',N'Nam', N'Củ Chi', N'0328467926', N'Đang làm'),
+		(N'Trần Quang Hậu', '2002-12-12',N'Nam', N'Đồng Nai', N'0328467928', N'Đang làm');
+
+GO
+INSERT INTO TAIKHOANNV
+VALUES  (N'tantruong', N'123456', 1, N'Quản lí'),
+		(N'nguyenbao', N'123456', 2, N'Nhân viên'),
+		(N'quanghau', N'123456', 3, N'Nhân viên');
+
+GO
 INSERT INTO VEXE
 VALUES (N'Phúc Xuyên',260000,12, N'Quảng Ninh', N'Hà Nội', '2023-12-08', '2023-12-11', N'07 giờ 30 phút',0,0,0,N'Limousine 12 chỗ','phucxuyen.jpeg'),
 	   (N'Hải Phòng Travel',270000, 11, N'Hà Nội', N'Hải Phòng', '2023-12-09', '2023-12-10', N'08 giờ', 0,0,0,N'Limousine 12 chỗ','haiphong.jpeg'),
@@ -200,6 +212,7 @@ VALUES (N'Phúc Xuyên',260000,12, N'Quảng Ninh', N'Hà Nội', '2023-12-08'
 	   (N'Huỳnh Gia',280000, 36, N'Nha Trang', N'Hồ Chí Minh', '2023-12-11', '2023-12-14', N'10 giờ', 0,0,0,N'Giường nằm 36 chỗ (WC)','huynhgia.jpeg'),
 	   (N'Phương Nam',250000,40, N'Vũng Tàu', N'Hồ Chí Minh', '2023-12-12', '2023-12-15', N'07 giờ',0,0,0, N'Giường nằm 40 chỗ có toilet', 'phuongnam.jpeg');
 
+GO
 INSERT INTO KhachHang (TENKH, NGAYSINH, GIOITINH, DIACHI, SDT, TAIKHOAN, MATKHAU, EMAIL, TRANGTHAI)
 VALUES  (N'Nguyễn Văn Tuấn','1985-09-30', N'Nam', N'TP. Hồ Chí Minh', N'0946777364', N'tuan12', N'123', N'tuan12@gmail.com', N'Không khoá'),
 		(N'Nguyễn Nguyên Bảo','2002-08-04', N'Nam', N'TP. Hồ Chí Minh', N'0569512477', N'1', N'1', N'040802.nguyenbao@gmail.com', N'Không khoá'),
@@ -208,6 +221,7 @@ VALUES  (N'Nguyễn Văn Tuấn','1985-09-30', N'Nam', N'TP. Hồ Chí Minh', N'
 		(N'Lê Thị Hồng', '1998-12-05', N'Nữ', N'TP. Hồ Chí Minh', N'0942888764', N'user5', N'hongle', N'hongle@gmail.com', N'Không khoá'),
 		(N'Nguyễn Tuấn Tú', '1995-03-20', N'Nam', N'TP. Hồ Chí Minh', N'0124777652', N'user2', N'tu111', N'tu111@gmail.com', N'Không khoá');
 
+GO
 INSERT INTO DANHGIA
 VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui vẻ', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,1, N'Hôm nay tôi thất tình', N'..............', 1, 'review_1.jpg', '2023-12-01 01:24:36.180'),
@@ -232,6 +246,7 @@ VALUES  (1,1, N'Rất tuyệt vời', N'Xe chạy chậm, tài xế vui ve
 		(1,19, N'', N'', 5, 'review_2.jpg', '2023-12-01 01:24:36.180'),
 		(3,20, N'', N'', 5, 'review_1.jpg', '2023-12-01 01:24:36.180');
 
+GO
 INSERT INTO HOADON (MAKH, NGAYLAP, THANHTIEN, SOHOADON, TENNGUOIDAT, DIACHI, SDT, EMAIL, SOGHE, MAKHUYENMAI, GHICHU, TRANGTHAI)
 VALUES  (1, '2023-12-07 02:33:24.527', 260000, 1, N'Nguyễn Văn Tuấn', N'TP. Hồ Chí Minh', '0946777364', 'tuan12@gmail.com', 1, N'Không có mã giảm giá', null, 0),
 		(2, '2023-12-07 02:33:24.527', 270000, 2, N'Nguyễn Nguyên Bảo', N'TP. Hồ Chí Minh', '0569512477', '040802.nguyenbao@gmail.com', 1, N'Không có mã giảm giá', null, 0),
@@ -243,6 +258,7 @@ VALUES  (1, '2023-12-07 02:33:24.527', 260000, 1, N'Nguyễn Văn Tuấn', N'TP.
 		(2, '2023-12-07 02:33:24.527', 1600000, 8, N'Nguyễn Nguyên Bảo', N'TP. Hồ Chí Minh', '0569512477', '040802.nguyenbao@gmail.com', 2, N'Không có mã giảm giá', null, 0),
 		(3, '2023-12-07 02:33:24.527', 280000, 9, N'Nguyễn Thị Ánh', N'TP. Hồ Chí Minh', '0278555643', 'anhnguyen@gmail.com', 1, N'Không có mã giảm giá', null, 1);
 
+GO
 INSERT INTO CHITIETHOADON
 VALUES  (1, 1, 1),
 		(2, 2, 1),
