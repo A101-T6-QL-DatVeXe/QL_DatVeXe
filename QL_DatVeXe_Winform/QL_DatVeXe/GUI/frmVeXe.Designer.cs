@@ -146,6 +146,7 @@
             // 
             // txtGiaVe
             // 
+            this.txtGiaVe.Enabled = false;
             this.txtGiaVe.Location = new System.Drawing.Point(437, 19);
             this.txtGiaVe.Name = "txtGiaVe";
             this.txtGiaVe.Size = new System.Drawing.Size(101, 20);
@@ -153,6 +154,7 @@
             // 
             // txtDiemDen
             // 
+            this.txtDiemDen.Enabled = false;
             this.txtDiemDen.Location = new System.Drawing.Point(437, 58);
             this.txtDiemDen.Name = "txtDiemDen";
             this.txtDiemDen.Size = new System.Drawing.Size(101, 20);
@@ -160,6 +162,7 @@
             // 
             // txtTenVe
             // 
+            this.txtTenVe.Enabled = false;
             this.txtTenVe.Location = new System.Drawing.Point(251, 19);
             this.txtTenVe.Name = "txtTenVe";
             this.txtTenVe.Size = new System.Drawing.Size(117, 20);
@@ -167,6 +170,7 @@
             // 
             // txtDiemDon
             // 
+            this.txtDiemDon.Enabled = false;
             this.txtDiemDon.Location = new System.Drawing.Point(254, 58);
             this.txtDiemDon.Name = "txtDiemDon";
             this.txtDiemDon.Size = new System.Drawing.Size(114, 20);

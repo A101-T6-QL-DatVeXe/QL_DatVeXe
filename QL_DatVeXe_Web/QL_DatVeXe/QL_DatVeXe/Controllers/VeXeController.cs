@@ -9,7 +9,7 @@ namespace QL_DatVeXe.Controllers
 {
     public class VeXeController : Controller
     {
-        QL_DATVEXEDataContext db = new QL_DATVEXEDataContext();
+        QL_DatVeXeDataContext db = new QL_DatVeXeDataContext();
         // GET: VeXe
         public ActionResult ShowAllVeXe(int? page)
         {

@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_DATVEXE" Class="QL_DATVEXEDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-NDFUQRAG\KATARINA;Initial Catalog=QL_DATVEXE;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QL_DATVEXEConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QL_DATVEXE" Class="QL_DatVeXeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Table Name="dbo.CHITIETHOADON" Member="CHITIETHOADONs">
     <Type Name="CHITIETHOADON">
       <Column Name="MAHD" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -91,15 +90,6 @@
       <Column Name="HINHANH" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs">
-    <Type Name="VEXETRONGGIOHANG">
-      <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="KHACHHANG_VEXETRONGGIOHANG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
-      <Association Name="VEXE_VEXETRONGGIOHANG" Member="VEXE" ThisKey="MAVE" OtherKey="MAVE" Type="VEXE" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.VEXE" Member="VEXEs">
     <Type Name="VEXE">
       <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -118,6 +108,15 @@
       <Association Name="VEXE_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MAVE" OtherKey="MAVE" Type="CHITIETHOADON" />
       <Association Name="VEXE_DANHGIA" Member="DANHGIAs" ThisKey="MAVE" OtherKey="MAVE" Type="DANHGIA" />
       <Association Name="VEXE_VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs" ThisKey="MAVE" OtherKey="MAVE" Type="VEXETRONGGIOHANG" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VEXETRONGGIOHANG" Member="VEXETRONGGIOHANGs">
+    <Type Name="VEXETRONGGIOHANG">
+      <Column Name="MAVE" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAKH" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KHACHHANG_VEXETRONGGIOHANG" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="VEXE_VEXETRONGGIOHANG" Member="VEXE" ThisKey="MAVE" OtherKey="MAVE" Type="VEXE" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -32,6 +32,7 @@ namespace GUI
 
         private void véXeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panelControl.Controls.Clear();
             frmVeXe f = new frmVeXe();
             f.FormBorderStyle = FormBorderStyle.None;
             f.TopLevel = false;
@@ -47,6 +48,7 @@ namespace GUI
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            panelControl.Controls.Clear();
             frmNhanVien f = new frmNhanVien();
             f.FormBorderStyle = FormBorderStyle.None;
             f.TopLevel = false;

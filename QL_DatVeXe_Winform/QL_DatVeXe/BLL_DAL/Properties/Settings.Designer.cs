@@ -26,8 +26,7 @@ namespace BLL_DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KENTCFS;Initial Catalog=QL_DATVEXE;Persist Security Info=True;User ID" +
-            "=sa;Password=123456;Encrypt=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=KENTCFS;Initial Catalog=QL_DATVEXE;Integrated Security=True;")]
         public string QL_DATVEXEConnectionString {
             get {
                 return ((string)(this["QL_DATVEXEConnectionString"]));

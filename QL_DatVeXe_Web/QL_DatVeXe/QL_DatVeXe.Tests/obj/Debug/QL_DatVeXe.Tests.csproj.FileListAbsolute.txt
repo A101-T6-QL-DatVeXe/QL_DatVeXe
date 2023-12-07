@@ -33,3 +33,38 @@ C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debu
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.csproj.CopyComplete
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.dll
 C:\bao\Do An\VeXe\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.pdb
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.Tests.dll.config
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.Tests.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.Tests.pdb
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Helpers.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Mvc.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Razor.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.Razor.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Optimization.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.pdb
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\QL_DatVeXe.dll.config
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Helpers.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Mvc.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Razor.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.WebPages.Razor.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\bin\Debug\System.Web.Optimization.xml
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.csproj.AssemblyReference.cache
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.csproj.CoreCompileInputs.cache
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.csproj.CopyComplete
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.dll
+D:\GitHub\QL_DatVeXe\QL_DatVeXe_Web\QL_DatVeXe\QL_DatVeXe.Tests\obj\Debug\QL_DatVeXe.Tests.pdb

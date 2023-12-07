@@ -23,7 +23,9 @@ namespace QL_DatVeXe.Models
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QL_DATVEXE")]
-	public partial class QL_DATVEXEDataContext : System.Data.Linq.DataContext
+
+
+	public partial class QL_DatVeXeDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -54,39 +56,39 @@ namespace QL_DatVeXe.Models
     partial void InsertTINTUC(TINTUC instance);
     partial void UpdateTINTUC(TINTUC instance);
     partial void DeleteTINTUC(TINTUC instance);
-    partial void InsertVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
-    partial void UpdateVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
-    partial void DeleteVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
     partial void InsertVEXE(VEXE instance);
     partial void UpdateVEXE(VEXE instance);
     partial void DeleteVEXE(VEXE instance);
-    #endregion
-		
-		public QL_DATVEXEDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QL_DATVEXEConnectionString"].ConnectionString, mappingSource)
-		{
-			OnCreated();
-		}
-		
-		public QL_DATVEXEDataContext(string connection) : 
+    partial void InsertVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
+    partial void UpdateVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
+    partial void DeleteVEXETRONGGIOHANG(VEXETRONGGIOHANG instance);
+        #endregion
+
+        public QL_DatVeXeDataContext() :
+                base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QL_DATVEXEConnectionString1"].ConnectionString, mappingSource)
+        {
+            OnCreated();
+        }
+
+        public QL_DatVeXeDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QL_DATVEXEDataContext(System.Data.IDbConnection connection) : 
+		public QL_DatVeXeDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QL_DATVEXEDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QL_DatVeXeDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public QL_DATVEXEDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QL_DatVeXeDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -156,19 +158,19 @@ namespace QL_DatVeXe.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
-		{
-			get
-			{
-				return this.GetTable<VEXETRONGGIOHANG>();
-			}
-		}
-		
 		public System.Data.Linq.Table<VEXE> VEXEs
 		{
 			get
 			{
 				return this.GetTable<VEXE>();
+			}
+		}
+		
+		public System.Data.Linq.Table<VEXETRONGGIOHANG> VEXETRONGGIOHANGs
+		{
+			get
+			{
+				return this.GetTable<VEXETRONGGIOHANG>();
 			}
 		}
 	}
@@ -2057,198 +2059,6 @@ namespace QL_DatVeXe.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VEXETRONGGIOHANG")]
-	public partial class VEXETRONGGIOHANG : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MAVE;
-		
-		private int _MAKH;
-		
-		private System.Nullable<int> _SOLUONG;
-		
-		private EntityRef<KHACHHANG> _KHACHHANG;
-		
-		private EntityRef<VEXE> _VEXE;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMAVEChanging(int value);
-    partial void OnMAVEChanged();
-    partial void OnMAKHChanging(int value);
-    partial void OnMAKHChanged();
-    partial void OnSOLUONGChanging(System.Nullable<int> value);
-    partial void OnSOLUONGChanged();
-    #endregion
-		
-		public VEXETRONGGIOHANG()
-		{
-			this._KHACHHANG = default(EntityRef<KHACHHANG>);
-			this._VEXE = default(EntityRef<VEXE>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVE", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MAVE
-		{
-			get
-			{
-				return this._MAVE;
-			}
-			set
-			{
-				if ((this._MAVE != value))
-				{
-					if (this._VEXE.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAVEChanging(value);
-					this.SendPropertyChanging();
-					this._MAVE = value;
-					this.SendPropertyChanged("MAVE");
-					this.OnMAVEChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int MAKH
-		{
-			get
-			{
-				return this._MAKH;
-			}
-			set
-			{
-				if ((this._MAKH != value))
-				{
-					if (this._KHACHHANG.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMAKHChanging(value);
-					this.SendPropertyChanging();
-					this._MAKH = value;
-					this.SendPropertyChanged("MAKH");
-					this.OnMAKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="Int")]
-		public System.Nullable<int> SOLUONG
-		{
-			get
-			{
-				return this._SOLUONG;
-			}
-			set
-			{
-				if ((this._SOLUONG != value))
-				{
-					this.OnSOLUONGChanging(value);
-					this.SendPropertyChanging();
-					this._SOLUONG = value;
-					this.SendPropertyChanged("SOLUONG");
-					this.OnSOLUONGChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXETRONGGIOHANG", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
-		public KHACHHANG KHACHHANG
-		{
-			get
-			{
-				return this._KHACHHANG.Entity;
-			}
-			set
-			{
-				KHACHHANG previousValue = this._KHACHHANG.Entity;
-				if (((previousValue != value) 
-							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._KHACHHANG.Entity = null;
-						previousValue.VEXETRONGGIOHANGs.Remove(this);
-					}
-					this._KHACHHANG.Entity = value;
-					if ((value != null))
-					{
-						value.VEXETRONGGIOHANGs.Add(this);
-						this._MAKH = value.MAKH;
-					}
-					else
-					{
-						this._MAKH = default(int);
-					}
-					this.SendPropertyChanged("KHACHHANG");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXETRONGGIOHANG", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
-		public VEXE VEXE
-		{
-			get
-			{
-				return this._VEXE.Entity;
-			}
-			set
-			{
-				VEXE previousValue = this._VEXE.Entity;
-				if (((previousValue != value) 
-							|| (this._VEXE.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._VEXE.Entity = null;
-						previousValue.VEXETRONGGIOHANGs.Remove(this);
-					}
-					this._VEXE.Entity = value;
-					if ((value != null))
-					{
-						value.VEXETRONGGIOHANGs.Add(this);
-						this._MAVE = value.MAVE;
-					}
-					else
-					{
-						this._MAVE = default(int);
-					}
-					this.SendPropertyChanged("VEXE");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VEXE")]
 	public partial class VEXE : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2680,6 +2490,198 @@ namespace QL_DatVeXe.Models
 		{
 			this.SendPropertyChanging();
 			entity.VEXE = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.VEXETRONGGIOHANG")]
+	public partial class VEXETRONGGIOHANG : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _MAVE;
+		
+		private int _MAKH;
+		
+		private System.Nullable<int> _SOLUONG;
+		
+		private EntityRef<KHACHHANG> _KHACHHANG;
+		
+		private EntityRef<VEXE> _VEXE;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMAVEChanging(int value);
+    partial void OnMAVEChanged();
+    partial void OnMAKHChanging(int value);
+    partial void OnMAKHChanged();
+    partial void OnSOLUONGChanging(System.Nullable<int> value);
+    partial void OnSOLUONGChanged();
+    #endregion
+		
+		public VEXETRONGGIOHANG()
+		{
+			this._KHACHHANG = default(EntityRef<KHACHHANG>);
+			this._VEXE = default(EntityRef<VEXE>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAVE", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAVE
+		{
+			get
+			{
+				return this._MAVE;
+			}
+			set
+			{
+				if ((this._MAVE != value))
+				{
+					if (this._VEXE.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAVEChanging(value);
+					this.SendPropertyChanging();
+					this._MAVE = value;
+					this.SendPropertyChanged("MAVE");
+					this.OnMAVEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int MAKH
+		{
+			get
+			{
+				return this._MAKH;
+			}
+			set
+			{
+				if ((this._MAKH != value))
+				{
+					if (this._KHACHHANG.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMAKHChanging(value);
+					this.SendPropertyChanging();
+					this._MAKH = value;
+					this.SendPropertyChanged("MAKH");
+					this.OnMAKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOLUONG", DbType="Int")]
+		public System.Nullable<int> SOLUONG
+		{
+			get
+			{
+				return this._SOLUONG;
+			}
+			set
+			{
+				if ((this._SOLUONG != value))
+				{
+					this.OnSOLUONGChanging(value);
+					this.SendPropertyChanging();
+					this._SOLUONG = value;
+					this.SendPropertyChanged("SOLUONG");
+					this.OnSOLUONGChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_VEXETRONGGIOHANG", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
+		public KHACHHANG KHACHHANG
+		{
+			get
+			{
+				return this._KHACHHANG.Entity;
+			}
+			set
+			{
+				KHACHHANG previousValue = this._KHACHHANG.Entity;
+				if (((previousValue != value) 
+							|| (this._KHACHHANG.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._KHACHHANG.Entity = null;
+						previousValue.VEXETRONGGIOHANGs.Remove(this);
+					}
+					this._KHACHHANG.Entity = value;
+					if ((value != null))
+					{
+						value.VEXETRONGGIOHANGs.Add(this);
+						this._MAKH = value.MAKH;
+					}
+					else
+					{
+						this._MAKH = default(int);
+					}
+					this.SendPropertyChanged("KHACHHANG");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="VEXE_VEXETRONGGIOHANG", Storage="_VEXE", ThisKey="MAVE", OtherKey="MAVE", IsForeignKey=true)]
+		public VEXE VEXE
+		{
+			get
+			{
+				return this._VEXE.Entity;
+			}
+			set
+			{
+				VEXE previousValue = this._VEXE.Entity;
+				if (((previousValue != value) 
+							|| (this._VEXE.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._VEXE.Entity = null;
+						previousValue.VEXETRONGGIOHANGs.Remove(this);
+					}
+					this._VEXE.Entity = value;
+					if ((value != null))
+					{
+						value.VEXETRONGGIOHANGs.Add(this);
+						this._MAVE = value.MAVE;
+					}
+					else
+					{
+						this._MAVE = default(int);
+					}
+					this.SendPropertyChanged("VEXE");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }

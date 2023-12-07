@@ -72,8 +72,6 @@ namespace GUI
             vx.NGAYDI = DateTime.Parse(txtNgayDi.Text);
             vx.NGAYVE = DateTime.Parse(txtNgayVe.Text);
             vx.THOIGIANDON = txtGio.Text + " giờ " + txtPhut.Text + " phút";
-            vx.SOSAO = 5;
-            vx.LUOTDANHGIA = 1;
             vx.MOTA = "Giường nằm 40 chỗ có toilet";
             vx.HINHANH = "offer_4.jpg";
 
@@ -111,11 +109,10 @@ namespace GUI
                 vx.NGAYDI = DateTime.Parse(txtNgayDi.Text);
                 vx.NGAYVE = DateTime.Parse(txtNgayVe.Text);
                 vx.THOIGIANDON = txtGio.Text + " giờ " + txtPhut.Text + " phút";
-                vx.SOSAO = 5;
-                vx.LUOTDANHGIA = 1;
                 vx.MOTA = "Giường nằm 40 chỗ có toilet";
                 vx.HINHANH = "offer_4.jpg";
 
+                btnSua.Text = "Sửa";
 
                 if (veXe.updateVeXe(vx))
                 {
